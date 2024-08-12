@@ -1,0 +1,12 @@
+table,tr,th,td{
+    border: 2px solid red;
+    border-collapse: collapse;
+    text-align: center;
+    width: 50%;
+    background-color: aqua;
+
+}
+th,td{
+    width: 50px;
+}
+

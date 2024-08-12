@@ -1,0 +1,50 @@
+.d{
+    margin: 50px;
+    border: 2px solid red;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    
+
+   
+}
+.d:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px rgb(50, 36, 36);
+}
+.image{
+    height: 200px;
+    width: 250px;
+    border-radius: 50%;
+    padding: 20px;
+    
+}
+.card-heading{
+    font-size: 30px;
+    margin: 0px;
+    font-family: Arial,  sans-serif;
+}
+.card-title{
+    font-style: italic;
+}
+.btn{
+    background-color: aqua;
+    color: black;
+    border: none;
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+.btn:hover{
+    background-color: orange;
+    font-size: 15px;
+    transform: scale(1.05);
+}
+.head{
+    margin: 0px;
+}
+.head:hover{
+    color: blue;
+}
