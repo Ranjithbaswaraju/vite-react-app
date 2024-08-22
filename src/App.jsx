@@ -1,13 +1,23 @@
-import Heading from './header/header.jsx';
-import Table from './table/table1.jsx';
-import Card from './card/card.jsx'
-import Ranjith from './header/ranjith.jsx'
+import Child from './Childprop/childprop';
+import Header from "./header/header"
+
+
 
 const App=()=>{
 
 
   return(
-    
+    <>
+     <Child text="ramu">
+      <h3>How are you?</h3>
+    <Header/>
+      </Child>
+     <Child text="kiran">
+      Hi bro
+      </Child>
+
+     </>
+   
     
   )
 }
