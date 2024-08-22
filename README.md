@@ -1,8 +1,29 @@
-# React + Vite
+null also considered as the false part 
+<User isAdmin={null}/>   
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SWITCH CASE EXAMPLE:
 
-Currently, two official plugins are available:
+function App(){
+    const type="ADMIN"
+    switch(type){
+        case "ADMIN"
+        return <User text="ADMIN"/>
+        case "GUEST"
+        return <User text="Guest"/>
+        case "USER"
+        return <User text="User">
+        defualt:
+        return <User/>
+    }
+}
+export defualt App:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In User page
+
+const User=({text})=>{
+    <>
+    <h3>Welcome {text}</h3>
+    </>
+
+}
+export default User;
