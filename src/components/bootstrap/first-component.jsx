@@ -18,6 +18,25 @@ const FirstComponent=()=>{
       <div className="col-sm-4">
         <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
       </div>
+      <div className="col-sm-4">
+        <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
+      </div>
+      <div className="col-sm-4">
+        <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
+      </div>
+      <div className="col-sm-4">
+        <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
+      </div>
+      <div className="col-sm-4">
+        <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
+      </div>
+      <div className="col-sm-4">
+        <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
+      </div>
+      <div className="col-sm-4">
+        <CustomRectangleCard text={"Micheal"} title={"HTML Dev"}/>
+      </div>
+      
     </div>
   </div>
 </>

@@ -1,7 +1,3 @@
-
-
-
-
 const Header=()=>{
     return(
         <header className="p-3 bg-dark text-white">
