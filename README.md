@@ -1,1 +1,1 @@
-This is sample bootstrap webapge
+This is sample react wegpage bootstrap webapge
