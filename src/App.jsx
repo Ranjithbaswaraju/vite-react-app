@@ -1,24 +1,39 @@
-import Child from './Childprop/childprop';
-import Header from "./header/header"
 
+import Button from "./Button/button"
+import Heading from "./header/header"
+import CustomRectangleCard from './components/bootstrap/custom-card'
+import { employeeDetails } from "./data/employedata"
+import FirstComponent from "./components/bootstrap/first-component"
 
 
 const App=()=>{
 
 
-  return(
-    <>
-     <Child text="ramu">
-      <h3>How are you?</h3>
-    <Header/>
-      </Child>
-     <Child text="kiran">
-      Hi bro
-      </Child>
-
-     </>
+  // return(
+  //  <div>
+  //   {/* <Button/>
+  //   <Heading/> */}
+  
+  //   <CustomRectangleCard text="Ranjith" title="React developer"/>
+  //  </div>
    
     
+  // )
+
+  return(
+    <div>
+<FirstComponent/>
+
+      {/* {
+        employeeDetails.map(each=>{
+          return(
+            <>
+            <CustomRectangleCard text={each.name} title={each.designation}/>
+            </>
+          )
+        })
+      } */}
+    </div>
   )
 }
 export default App;
