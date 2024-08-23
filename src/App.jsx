@@ -1,18 +1,41 @@
-import Header from "./components/bootstrap/bootstrapheader"
-import Footer from "./components/bootstrap/footer";
-import Card from "./components/bootstrap/first-component"
 
+// import Button from "./Button/button"
+// import Heading from "./header/header"
+// import CustomRectangleCard from './components/bootstrap/custom-card'
+// import { employeeDetails } from "./data/employedata"
+// import FirstComponent from "./components/bootstrap/first-component"
+import YoutubeButton from "./components/class/youtube-button";
 
 
 const App=()=>{
+
+
+  // return(
+  //  <div>
+  //   {/* <Button/>
+  //   <Heading/> */}
+  
+  //   <CustomRectangleCard text="Ranjith" title="React developer"/>
+  //  </div>
+   
+    
+  // )
+
   return(
-    <>
-    
-    <Header/>
-    <Card />
-    <Footer/>
-    </>
-    
+    <div>
+{/* <FirstComponent/> */}
+<YoutubeButton/>
+
+      {/* {
+        employeeDetails.map(each=>{
+          return(
+            <>
+            <CustomRectangleCard text={each.name} title={each.designation}/>
+            </>
+          )
+        })
+      } */}
+    </div>
   )
 }
 export default App;

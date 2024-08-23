@@ -1,47 +1,59 @@
-How to use the npm packages in react application:
-
-1.Loader
-2.Toasts
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
+class component:
 
-const Toasts=({message})=>{
-        // const clickMe=()=>{
-        //     // toast(message)
-        //     toast.success(message,{
-        //         position:"top-center"
-        //     })
-        const notify = () => {
-            // toast("Default Notification !");
-      
-            toast.success("Success Notification !", {
-              position: "top-right"
-            });
-      
-            // toast.error("Error Notification !", {
-            //   position: "top-left"
-            // });
-      
-            // toast.warn("Warning Notification !", {
-            //   position: "bottom-left"
-            // });
-      
-            // toast.info("Info Notification !", {
-            //   position: "bottom-center"
-            // });
-      
-            // toast("Custom Style Notification with css class!", {
-            //   position: "bottom-right",
-            //   className: 'foo-bar'
-            // });
-        }
-    return(
-        <div>
-        <button onClick={notify}>Notify !</button>
-        <ToastContainer />
-      </div> 
-    )
+
+import {Component} from 'react'
+class Greeting extends Component{
+    render(){
+        return(
+            <h3>Hello</h3>
+        )
+    }
 }
-export default Toasts;
+
+React state:
+
+React state is an object which is used to hold the information or data of a paerticular component.
+
+example:
+
+
+React state is a private to a component
+
+state is mutable
+
+State is applicable for both class and functional component
+
+How to create state in class compoenents?
+
+There are 2 ways to create a state in class components:
+
+1.Object way of creation.
+2.Constructor way
+
+
+To access the state in class component ,we need to use to this.state.property
+
+Note :TO attach the event in class components we need to use this.methodName
+
+Mutate the state:
+To mutate the state in class components , we need to use this.setState method
+note:Only way to change the state is by this.setState
+
+
+setState method syntax:
+it will accept 2 arguments 1.Object or function 2.Function
+
+this.setState({
+    //state changes
+},()=>{
+    //To check the latest state changes
+})
+
+note:State chnages are asynchronous
+note:When we use setState method,component will re-render(re-excuted ti show updated chnages)
+
+
+room--component
+books--state
