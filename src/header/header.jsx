@@ -1,7 +1,8 @@
 import './header.css'
-const Heading=()=>{
+const Heading=(prop)=>{
+    const {text}=prop
     return(
-        <div className="card">
+        <div >
          <h1>Hello</h1>
         </div>
        
