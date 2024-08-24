@@ -4,6 +4,7 @@
 // import CustomRectangleCard from './components/bootstrap/custom-card'
 // import { employeeDetails } from "./data/employedata"
 // import FirstComponent from "./components/bootstrap/first-component"
+import CardAddition from "./components/cardaddition/card-add";
 import Converter from "./components/class/conveter";
 import YoutubeButton from "./components/class/youtube-button";
 // import Converter from "./components/class/conveter";
@@ -28,7 +29,10 @@ const App=()=>{
 {/* <FirstComponent/> */}
 
 {/* <YoutubeButton/> */}
-<Converter/>
+{/* <Converter/> */}
+
+
+<CardAddition/>
 
       {/* {
         employeeDetails.map(each=>{
