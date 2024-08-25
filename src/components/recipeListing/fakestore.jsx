@@ -81,7 +81,6 @@ class Fakestore extends Component{
                                     <div style={{
                                         display:'flex',
                                         height:'100px',
-                                      
                                         justifyContent:'space-around',
                                         alignItems:'center',
                                         boxSizing:'border-box'
