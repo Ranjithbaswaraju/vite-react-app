@@ -8,12 +8,29 @@ class Fakestore extends Component{
     state={
         products:[],
         loading:true,
-        error:false
+        error:false,
+        bulbImage:'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940319kdxsp3rf0i.png',
+        clickedBulbId: null,
+        // bulbClicked:false
 
     }
     componentDidMount(){
         this.fetchData()
     }
+
+    bulbHandler=()=>{
+        this.setState(preventBulb=>({
+            bulbImage:preventBulb.bulbClicked
+            ?'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940319kdxsp3rf0i.png':'https://toppng.com/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png',
+            
+            bulbClicked: !preventBulb.bulbClicked
+        }))
+    }
+    // bulbHandler = (id) => {
+    //     this.setState(prevState => ({
+    //         clickedBulbId: prevState.clickedBulbId === id ? null : id
+    //     }));
+    // };
 
     fetchData=async()=>{
         const {status,data}=await axios.get('https://fakestoreapi.com/products')
@@ -24,14 +41,16 @@ class Fakestore extends Component{
             })
         }
     }
-
+    
     render(){
         
         return(
             <>
+            
             <h1 style={{
                 textAlign:'center'
             }}>FAKE STORE PRODUCTS</h1>
+            
             
             {
                 this.state.loading?<CustomDNALoader/>:
@@ -94,7 +113,13 @@ class Fakestore extends Component{
                                        
                                     }}>Buy Now
                                     </button>
-                                    <InstagramHert style={{height:'100%',width: 'auto'}}/>
+                                    <img src={this.state.bulbImage} onClick={this.bulbHandler} style={{height:'100px',width:'100px'}}/>
+
+                                    {/* <img src={this.state.clickedBulbId === eachItem.id
+                                                ? 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940319kdxsp3rf0i.png'
+                                                : 'https://toppng.com/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png'}
+                                                onClick={() => this.bulbHandler(eachItem.id)}
+                                                style={{ height: '100px', width: '100px' }} /> */}
                             
                                     </div>
                                 </div>
