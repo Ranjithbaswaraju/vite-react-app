@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap";
 class CardAddition extends Component{
     state={
         employeeData:[]
+        ,
     }
     clickHandler=()=>{
         //Need to add cards hare
