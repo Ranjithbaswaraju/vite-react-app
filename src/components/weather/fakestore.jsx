@@ -5,7 +5,7 @@ import BasicExample from "./wather-card";
 class Fake extends Component{
     state={
         products:[],
-        selectedProduct: [] ,
+        selectedProduct: null ,
         id:''
     }
     componentDidMount(){
@@ -29,10 +29,10 @@ class Fake extends Component{
         return(
         <>
 
-<div style={{ display: 'flex', flexDirection:'column', alignItems: 'flex-start' }}>
-    {this.state.products.map(each => (
-        <div key={each.id}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+<div style={{ display: 'flex', }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: '20px' ,width:'300px'}}>
+        {this.state.products.map(each => (
+            <div key={each.id} style={{ width: '300px' }}>
                 <BasicExample
                     title={each.title}
                     image={each.image}
@@ -40,11 +40,11 @@ class Fake extends Component{
                     onClick={() => this.handleCardClick(each)}
                 />
             </div>
-        </div>
-    ))}
+        ))}
+    </div>
 
     {this.state.selectedProduct && (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start',  }}>
+        <div style={{ width: '300px', marginLeft: '400px',marginTop:'40px' }}>
             <BasicExample
                 title={this.state.selectedProduct.title}
                 image={this.state.selectedProduct.image}
@@ -54,7 +54,6 @@ class Fake extends Component{
     )}
 </div>
 
-            
         </>
         
         )
