@@ -48,7 +48,7 @@ class Fake extends Component{
             <BasicExample
                 title={this.state.selectedProduct.title}
                 image={this.state.selectedProduct.image}
-                description={this.state.selectedProduct.description}
+                description={this.state.seblectedProduct.description}
             />
         </div>
     )}

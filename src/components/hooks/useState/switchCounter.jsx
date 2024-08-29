@@ -1,16 +1,13 @@
 import React,{useState} from "react"
 
-const SwitchFunction=()=>{
+const SwitchCounter=()=>{
 
     const[age,setAge]=useState(10)
 
     const ageHandler=(type)=>{
         switch(type){
             case "INCREMENT":
-                setAge(age=>age+1)
-                setAge(age=>age+1);
-                //Here we are sending the age is an argument and update it frim it only this is prefered 
-                break
+                setAge(age+1);break
             case "DECREMENT":
                 if(age>0){
                     setAge(age-1)
@@ -34,4 +31,4 @@ const SwitchFunction=()=>{
 
     )
 }
-export default SwitchFunction;
+export default SwitchCounter
