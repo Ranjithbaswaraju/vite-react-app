@@ -2,7 +2,7 @@ import {useState} from "react";
 import { Button } from "./buttonjshlper";
 
 const Button1=()=>{
-    const[buttons,setButtons]=useState(Button())
+    const[buttons,setButton]=useState(Button())
     const[message,setMessage]=useState("")
 
     const handleCLick=(id)=>{
@@ -17,7 +17,7 @@ const Button1=()=>{
                 return(
                     <>
                     
-                    <button key={each.id}onClick={()=>handleCLick(each.id)} style={{width:'100px'}}>{each.text}</button>
+                    <button key={each.id} onClick={()=>handleCLick(each.id)} style={{width:'100px'}}>{each.text}</button>
                 
                     </>
                     
