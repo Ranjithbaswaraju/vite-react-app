@@ -21,7 +21,14 @@ const ControlledForm1 = () => {
         event.preventDefault();
         // Handle form submission here
 
-        setSubmittedData([...submittedData, formData]);
+
+        const newFormData={
+            data1:formData.model,
+            data2:formData.mobileNumber,
+            data3:formData.state
+        }
+
+        setSubmittedData([...submittedData, newFormData]);
 
         // Optionally, clear the form after submission
         setFormData({
