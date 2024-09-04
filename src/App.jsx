@@ -3,7 +3,7 @@ import UncontrolledComponent from "./components/hooks/uncontrolled/uncontrolled-
 
 
 
-
+import  ControlledForm from "./components/hooks/controlled/controlled.jsx";
 
 
 
@@ -14,8 +14,9 @@ const App=()=>{
 
   return(
     <>
-  
- <UncontrolledComponent/>
+   <ControlledForm/>
+ {/* <UncontrolledComponent/> */}
+
     </>
   )
 }
