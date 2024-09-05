@@ -1,10 +1,7 @@
+// import UseEffectExample from "./components/hooks/useEffect/useEffcetEx";
+// import UseEffectExample2 from "./components/hooks/useEffect/useEffectEx2";
+import UseEffectExample3 from "./components/hooks/useEffect/useEffectEx3";
 
-import UncontrolledComponent from "./components/hooks/uncontrolled/uncontrolled-form";
-
-
-
-import  ControlledForm1 from "./components/hooks/controlled/controlledState.jsx";
-import Countires from "./components/hooks/controlled/taskindia.jsx";
 
 
 
@@ -15,7 +12,9 @@ const App=()=>{
 
   return(
     <>
-<Countires/>
+{/* <UseEffectExample/> */}
+{/* <UseEffectExample2/> */}
+<UseEffectExample3/>
 
     </>
   )
