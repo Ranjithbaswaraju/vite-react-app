@@ -4,7 +4,11 @@ import Homescreen from "../screens/home-screen"
 import AboutScreen from "../screens/about-screen"
 import Navbar from "../components/navbar/navbar"
 import Invalidscreen from "../screens/invalid-screen"
-
+import { CategoryScreen } from "../screens/category-screen"
+import { JewelleryScreen } from "../screens/jewellery-screen"
+import { ElectronicsScreen } from "../screens/electronics-screen"
+import { ProductScreen } from "../screens/product.screen"
+import { ProductDetails } from "../screens/product-details-screen"
 
 const NavigationStack=()=>{
     return(
@@ -14,14 +18,28 @@ const NavigationStack=()=>{
         {
             true ?
             <Routes>
+        
             <Route path="/" element={<Homescreen/>}/> 
             <Route path="/about" element={<AboutScreen/>}/>
             <Route path="/*" element={<Invalidscreen/>}/>
+            <Route path="category" element={<CategoryScreen/>}>
 
+
+            <Route index element={<ElectronicsScreen/>}/>
+            <Route path="jewellery" element={<JewelleryScreen/>}/>
+            <Route path="electronics" element={<ElectronicsScreen/>}/>
+            </Route>
+            <Route path="products" element={<ProductScreen/>}/>
+
+            <Route path="products/:productId" element={<ProductDetails/>}/>
         </Routes>
 
-        
-        :
+    :
+
+
+
+
+
         <Routes>
             <Route path="/login" element={<Homescreen/>}/> 
             {/* <Route path="/about" element={<AboutScreen/>}/> */}

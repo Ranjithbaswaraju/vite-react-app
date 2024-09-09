@@ -47,3 +47,15 @@ Tasks:
 3.why not to use the anchor tags in react
 4.Difference between staic and dynamic navigations
 5.Design a side bar and provide navigations
+
+
+With extension to the static navigations in this discussed the dynamic and nested navigations 
+
+lets discusss:
+
+
+outlet in react is used to load the children under the parent 
+ 
+ useParams:
+ It is used to collect  the dynamic part of url
+ The useParams is used to return an object
