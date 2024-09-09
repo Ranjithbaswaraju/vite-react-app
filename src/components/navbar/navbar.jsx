@@ -7,9 +7,9 @@ const Navbar=()=>{
     
     const liStyle={margin:"10px"}
     return(
-        <nav className="navbar navbar-expand-sm bg-light navbar-light">
-  <div className="container-fluid">
-    <ul className="navbar-nav">
+        <nav className="navbar navbar-expand-sm bg-light navbar-light ">
+      <div className="container-fluid justify-content-center">
+      <ul className="navbar-nav">
       <li className="nav-item" style={liStyle}>
         <NavLink to={"/"}>Main </NavLink>
       </li>
@@ -17,7 +17,7 @@ const Navbar=()=>{
       <NavLink to={"about"}>About </NavLink>
       </li>
 
-      <li className="nav-item" style={liStyle}>
+      <li className="nav-item" style={liStyle }>
       <NavLink to={"category"}>Categories </NavLink>
       </li>
 

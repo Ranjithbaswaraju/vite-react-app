@@ -9,8 +9,8 @@ const Homescreen=()=>{
     return(
         <>
         {/* <Navbar/> */}
-        <h3>Welcome to home screen</h3>
-        <UseEffectExample/>
+        <h3 style={{textAlign:'center'}}> Welcome to home screen</h3>
+        {/* <UseEffectExample/> */}
         </>
     )
 }

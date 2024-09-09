@@ -1,8 +1,9 @@
 
 import axios from "axios"
 // import React from 'react'
-import { useEffect, useState } from "react"
+import { Component, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Component1 from "../components/bootstrap/card"
 export const ProductScreen=()=>{
     const[products,setProducts]=useState([])
 
@@ -31,9 +32,10 @@ export const ProductScreen=()=>{
 products.length>0 && <>
     {
         products.map(each=><>
-        
+        <Component1></Component1>
         <h4>{each.title}</h4>
         <button><Link to={`${each.id}`}>View Product</Link></button>
+       
         </>)
     }
     </>

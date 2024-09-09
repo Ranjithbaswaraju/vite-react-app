@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 function Component1(props) {
-    const {title,text,image,height,width,price,category1} =props;
+    const {title,image,text,category1,price} =props;
   return (
     <Card style={{ width: '22rem' ,textAlign:'center'}}>
       

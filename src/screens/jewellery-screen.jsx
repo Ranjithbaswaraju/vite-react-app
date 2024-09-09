@@ -1,7 +1,8 @@
 
 
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
+import Component1 from "../components/bootstrap/card";
 
 
 export const JewelleryScreen=()=>{
@@ -24,10 +25,20 @@ export const JewelleryScreen=()=>{
     return(
         <div>
             <h2>Welcome to Jewellery products</h2>
+            <div style={{display:'flex', flexWrap:'wrap',gap:'20px'}}>
             {
                 data.map(each=>
                     <>
-                    <p>{JSON.stringify(each)}</p>
+                    <Component1
+                    key={each.id}
+                    title={each.title}
+            image={each.image}
+            text={each.description}
+            category1={each.category}
+            price={each.price}
+                    
+                    
+                    />
                     </>
                 )
             }
@@ -35,7 +46,7 @@ export const JewelleryScreen=()=>{
 
 
 
-
+</div>
         </div>
     )
 }

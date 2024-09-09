@@ -29,6 +29,7 @@ export const ProductDetails =()=>{
                 <h2>{productData.title}</h2>
                 <img src={productData.image}/>
                 <p>{productData.description}</p>
+               
                 
                 </>
             }

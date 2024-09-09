@@ -48,10 +48,10 @@ const ageHandler=()=>{
 
 
         <>
-        <h3>UseEffect Example</h3>
+        {/* <h3 style={}>UseEffect Example</h3> */}
         <button onClick={ageHandler}>Increment age</button>
         {
-            ["products","carts","users"].map(each=><><button onClick={()=>changeTypeHandler(each)}>{each}</button></> )
+            // ["products","carts","users"].map(each=><><button onClick={()=>changeTypeHandler(each)}>{each}</button></> )
         }
 
         <h5>{type}</h5>

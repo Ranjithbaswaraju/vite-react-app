@@ -9,6 +9,8 @@ import { JewelleryScreen } from "../screens/jewellery-screen"
 import { ElectronicsScreen } from "../screens/electronics-screen"
 import { ProductScreen } from "../screens/product.screen"
 import { ProductDetails } from "../screens/product-details-screen"
+import { MensScreen } from "../screens/men-screen"
+import { WomensScreen } from "../screens/women-screen"
 
 const NavigationStack=()=>{
     return(
@@ -28,6 +30,8 @@ const NavigationStack=()=>{
             <Route index element={<ElectronicsScreen/>}/>
             <Route path="jewellery" element={<JewelleryScreen/>}/>
             <Route path="electronics" element={<ElectronicsScreen/>}/>
+            <Route path="men's clothing" element={<MensScreen/>}/>
+            <Route path="women's clothing" element={<WomensScreen/>}/>
             </Route>
             <Route path="products" element={<ProductScreen/>}/>
 
