@@ -1,51 +1,49 @@
-useEffect:useeffect is a react functional hook which is used to cause side effects with in the componennt
-
-side effects:asybc actions-dom manipulations,event listeners,data fetching,third party subscriptions
-
-useEffect is replacement of 3 life cycle methods in class components
-
-1.ComponentDidMount
-2.componentDidUpdate
-3.componentWllUnmount
+ 
 
 
-syntax:useEffect(()=>{},[])
-
-useEffect will accepts the callback and array
-
-note:useEffect behaviour wll depend on 2 argument which is an array
-
-case1:if array is empty,useEffct will behave like componentDidMount.
-it will run only once in a life cycle
-
-useEffect(()=>{},[])
-
-2.if array is filled with values ,depending upon value chnages useEffect will behave like a componentDidUpdate.
-
-useEffect(()=>{},[value1,value2.....])
 
 
-[value1,value2.....]if values were changing useEffect will re-reder(re-exceute)
+ React-router-dom--To provide navigation in react app ,we don't use anchor tags instead we have an dedicated package/library called React-router-dom
 
-this array will call it as the dependcey array
-
-
-3.No dependecy array
-
-useEffect(()=>{})
-if no dependcy array,component will keep on re-rendering when ever state or prop chnages it might also leads to infinite rendering of component
-
-case4:
-if useEffect callback function returns the function,with in returnded function we can prevent memory leaks if the component --componenntwillUnmount
-
-useeEffect(()=>{
-    return()=>{
-        //prevent the memory leaks
-    }
-},[])
+command to install react-router-dom:
+npm i react-router-dom
 
 
-tasks:
-1.5 examples for useState,useRef and useEffect
-2.based on button events,show the corresponding data in tables
+ Types of navigations:
 
+ 1.Static navigations
+ 2.dynamic navigations
+ 3.nested navigations
+
+http://localhost:5173/--Base URL
+
+1.Homescreen - http://localhost:5173/
+2.AboutScreen - http://localhost:5173/about
+3.Settingscreen - http://localhost:5173/settings
+
+4.Contact - http://localhost:5173/contact
+
+8.ProductDetailsscreen-http://localhost:5173/product/1
+http://localhost:5173/product/2
+
+
+<Route path="/" element={Homescreen}/> 
+
+path and elements are props
+
+
+
+In react router dom,they are 2 ways to navigate to a screen
+
+1.link component provided by react router dom
+2.useNavigate hook provided by react router dom --programitical navigation
+
+
+
+
+Tasks:
+1.Repeat the class
+2.Fill the all the screens with content-login,registration,about
+3.why not to use the anchor tags in react
+4.Difference between staic and dynamic navigations
+5.Design a side bar and provide navigations

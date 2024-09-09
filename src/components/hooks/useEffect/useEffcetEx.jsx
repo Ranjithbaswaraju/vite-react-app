@@ -24,7 +24,7 @@ const UseEffectExample=()=>{
 
     
     // const{data,status}=await axios.get(`http://fakestoreapi.com/${endpoint}`)
-    const{data,status}=await axios.get(`http://fakestoreapi.com/${type}`)
+    const{data,status}=await axios.get(`https://fakestoreapi.com/${type}`)
 
     if(status==200){
         setData(data)
