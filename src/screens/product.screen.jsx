@@ -1,10 +1,16 @@
 
 import axios from "axios"
 // import React from 'react'
-import { Component, useEffect, useState } from "react"
+import { Component, useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Component1 from "../components/bootstrap/card"
+import { UserDeatails } from "../navigations/navigation-stack"
 export const ProductScreen=()=>{
+
+    const {username}=useContext(UserDeatails)
+
+
+    console.log(username,"global Data")
     const[products,setProducts]=useState([])
 
     useEffect(()=>{
@@ -25,7 +31,7 @@ export const ProductScreen=()=>{
     return(
 <div>
     
-    
+    <h5>good afternoon {username}</h5>
    <h2> List of products</h2>
    {
 

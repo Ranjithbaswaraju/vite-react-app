@@ -11,10 +11,50 @@ import { ProductScreen } from "../screens/product.screen"
 import { ProductDetails } from "../screens/product-details-screen"
 import { MensScreen } from "../screens/men-screen"
 import { WomensScreen } from "../screens/women-screen"
+import { createContext, useState } from "react"
+
+
+
+export const UserDeatails=createContext()
+
 
 const NavigationStack=()=>{
+
+    const[username,setUsername]=useState("ranjith")
+    const [isDark,setisDark]=useState(true)
+    const[salary,setSalary]=useState(10000)
+
+    const darkHandler=()=>{
+        setisDark(!isDark)
+    }
+    const salaryHandler=()=>{
+        setSalary(salary+10000)
+    }
+    const resetsalaryHandler=()=>{
+        setSalary(0)
+    }
+    const decreasesalaryHandler=()=>{
+        if(salary>0)
+        setSalary(salary-10000)
+        else
+        alert("salary not in negative")
+    }
+
     return(
-        <>
+
+        <UserDeatails.Provider value={{
+            username:"ranjith",
+            darkTheme:isDark,
+            salary:salary,
+            darkHandler:darkHandler,
+            salaryHandler:salaryHandler,
+            resetsalaryHandler:resetsalaryHandler,
+            decreasesalaryHandler:decreasesalaryHandler
+
+            
+        }}>
+
+<>
         
         <Navbar/>
         {
@@ -51,6 +91,10 @@ const NavigationStack=()=>{
         </Routes>
 }
         </>
+
+        </UserDeatails.Provider>
+
+        
         
         
 

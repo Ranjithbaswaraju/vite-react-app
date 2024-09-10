@@ -1,11 +1,18 @@
 
 
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Component1 from "../components/bootstrap/card";
+import { UserDeatails } from "../navigations/navigation-stack";
+
+
 
 
 export const JewelleryScreen=()=>{
+
+    const {username}=useContext(UserDeatails)
+
+
     const[data,setData]=useState([])
     useEffect(()=>{
         fetchData()
@@ -24,6 +31,7 @@ export const JewelleryScreen=()=>{
     }
     return(
         <div>
+            <h3>Welcome {username}</h3>
             <h2>Welcome to Jewellery products</h2>
             <div style={{display:'flex', flexWrap:'wrap',gap:'20px'}}>
             {
