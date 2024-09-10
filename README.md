@@ -1,1 +1,5 @@
-In this i have done a project on the fake procut so refer to thhis this is totally based on the navigations aonly 
+In this discussing about the state management
+
+
+Types of management:
+1.local state management:
