@@ -27,19 +27,29 @@ export const ProductScreen=()=>{
     
     
    <h2> List of products</h2>
+   <div style={{display:'flex', flexWrap:'wrap', gap:'20px'}}>
    {
 
 products.length>0 && <>
     {
         products.map(each=><>
-        <Component1></Component1>
-        <h4>{each.title}</h4>
-        <button><Link to={`${each.id}`}>View Product</Link></button>
+        <Component1 to={`${each.id}`} 
+            
+            title={each.title}
+            image={each.image}
+            price={each.price}
+            
+            
+            
+            />
+        
+       
        
         </>)
     }
     </>
    }
+   </div>
 </div>
 
 

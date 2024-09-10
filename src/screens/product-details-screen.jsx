@@ -1,6 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Component1 from "../components/bootstrap/card"
 export const ProductDetails =()=>{
 
     const dynamicPath=useParams()
@@ -24,13 +25,19 @@ export const ProductDetails =()=>{
     return(
         <div>
             <h3>product data</h3>
+            
             {
                 Object.keys(productData).length>0 && <>
-                <h2>{productData.title}</h2>
-                <img src={productData.image}/>
-                <p>{productData.description}</p>
+                <Component1
+                title={productData.title}
+              image={productData.image }
+              category1={productData.category}
+              price={productData.description}
+              text={productData.price}
+
+              
                
-                
+                />
                 </>
             }
         </div>

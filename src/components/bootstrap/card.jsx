@@ -1,9 +1,10 @@
 import { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function Component1(props) {
-    const {title,image,text,category1,price} =props;
+    const {title,image,text,category1,price,to} =props;
   return (
     <Card style={{ width: '22rem' ,textAlign:'center'}}>
       
@@ -29,7 +30,7 @@ function Component1(props) {
         }}>{text}</Card.Text>
         <Card.Text style={{fontWeight:'bold'}}>{category1}</Card.Text>
         <Card.Text >{`price:${price}`}</Card.Text>
-        <Button variant="primary">Buy Now</Button>
+        <Button variant="secondary" ><Link to={to}>  BUYNOW       </Link></Button>
       </Card.Body>
     </Card>
   );
