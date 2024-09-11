@@ -13,8 +13,8 @@ const App=()=>{
 
   return(
     <>
-   {/* <ControlledForm/> */}
- <UncontrolledComponent/>
+   <ControlledForm/>
+ {/* <UncontrolledComponent/> */}
 
     </>
   )
