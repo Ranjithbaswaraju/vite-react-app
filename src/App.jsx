@@ -14,10 +14,10 @@ const App=()=>{
 
   return(
     <>
-{/* <UseEffectExample/> */}
+<UseEffectExample/>
 {/* <UseEffectExample2/> */}
 {/* <UseEffectExample3/> */}
-<UseApp/>
+
     </>
   )
 }

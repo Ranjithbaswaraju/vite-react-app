@@ -1,7 +1,6 @@
-import Navbar from "../components/navbar/navbar"
 import UseReducerExample from "../components/hooks/useReducer/useReducer1"
 
-const AboutScreen=()=>{
+const TodoTask=()=>{
     return(
         <>
         <UseReducerExample/>
@@ -11,4 +10,4 @@ const AboutScreen=()=>{
         </>
     )
 }
-export default AboutScreen
+export default TodoTask;
