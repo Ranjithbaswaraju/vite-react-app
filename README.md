@@ -72,3 +72,14 @@ payload is optional(how much the age incremented)
 }
 
 dispatchFunction:To dispatch an action we must use dispatchFunction which accepts the action
+
+
+
+
+Task is there
+
+
+TODO Crud operation by using the useReducer
+
+
+data impoted in about screen and the check data in about screen there will seen the data in TODO

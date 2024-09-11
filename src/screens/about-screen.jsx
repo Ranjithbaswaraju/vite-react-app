@@ -1,5 +1,6 @@
-import Navbar from "../components/navbar/navbar"
 import UseReducerExample from "../components/hooks/useReducer/useReducer1"
+import Navbar from "../components/navbar/navbar"
+
 
 const AboutScreen=()=>{
     return(
