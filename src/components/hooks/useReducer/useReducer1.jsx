@@ -89,9 +89,12 @@ const reducer=(state,action)=>{
 
         {
             curentState.todos.map(eachTodo=>
-            <Fragment key={eachTodo.index}>
+            <Fragment key={eachTodo.id}>
 
-                <h5>{eachTodo}</h5>
+                {
+                  <h1>{eachTodo}</h1>
+                  
+                }
             </Fragment>)
         }
         </>
