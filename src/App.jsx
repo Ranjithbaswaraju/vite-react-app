@@ -25,8 +25,8 @@ const App=()=>{
     {/* <SwitchCounter/> */}
 {/* <SwitchFunction/> */}
 {/* <SetInterval/> */}
-{/* <CustomTodo/> */}
-<Button1/>
+<CustomTodo/>
+{/* <Button1/> */}
     </>
   )
 }
