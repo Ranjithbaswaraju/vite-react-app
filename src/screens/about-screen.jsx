@@ -1,4 +1,6 @@
+
 import Navbar from "../components/navbar/navbar"
+import ControlledForm from "../components/hooks/controlled/controlled"
 
 
 const AboutScreen=()=>{
@@ -6,6 +8,7 @@ const AboutScreen=()=>{
         <>
         {/* <Navbar/> */}
         <h3>Welcome to about screen</h3>
+        <ControlledForm/>
         </>
     )
 }
