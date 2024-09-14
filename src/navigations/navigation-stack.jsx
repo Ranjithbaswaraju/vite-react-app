@@ -11,11 +11,16 @@ import { ProductScreen } from "../screens/product.screen"
 import { ProductDetails } from "../screens/product-details-screen"
 import { MensScreen } from "../screens/men-screen"
 import { WomensScreen } from "../screens/women-screen"
-import { createContext, useState } from "react"
+import { createContext, useReducer, useState } from "react"
+import { counterReducer, initialState } from "./counterHelper"
+
 
 
 
 export const UserDeatails=createContext()
+const ThemeDark=createContext()
+export const GlobalCounter=createContext()
+
 
 
 const NavigationStack=()=>{
@@ -23,6 +28,8 @@ const NavigationStack=()=>{
     const[username,setUsername]=useState("ranjith")
     const [isDark,setisDark]=useState(true)
     const[salary,setSalary]=useState(10000)
+
+    const [currentState,dispatch]=useReducer(counterReducer,initialState)
 
     const darkHandler=()=>{
         setisDark(!isDark)
@@ -41,7 +48,11 @@ const NavigationStack=()=>{
     }
 
     return(
+        <>
+        <GlobalCounter.Provider value={
+           {currentState:currentState,dispatch:dispatch}
 
+        }>
         <UserDeatails.Provider value={{
             username:"ranjith",
             darkTheme:isDark,
@@ -93,11 +104,12 @@ const NavigationStack=()=>{
         </>
 
         </UserDeatails.Provider>
+        </GlobalCounter.Provider>
 
         
         
         
-
+</>
     )
 }
 export default NavigationStack

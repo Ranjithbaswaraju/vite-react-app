@@ -1,12 +1,15 @@
 import { useContext } from "react"
 import Navbar from "../components/navbar/navbar"
-import { UserDeatails } from "../navigations/navigation-stack"
+import { GlobalCounter, UserDeatails } from "../navigations/navigation-stack"
+import { incrementAction } from "../navigations/counterHelper"
 
 
 const AboutScreen=()=>{
 
      const{darkHandler,salaryHandler,resetsalaryHandler,decreasesalaryHandler}=useContext(UserDeatails)
 
+    const {currentState,dispatch}=useContext(GlobalCounter)
+    console.log(currentState)
      const changeHandler=()=>{
         darkHandler()
      }
@@ -15,7 +18,7 @@ const AboutScreen=()=>{
     return(
         <>
         {/* <Navbar/> */}
-        <h3>Welcome to about screen</h3>
+        <h3>Welcome to about screen{currentState.count}</h3>
         <button onClick={changeHandler}>Change Theme</button>
         <button onClick={salaryHandler}>Increment  salary</button>
         <button onClick={resetsalaryHandler}>Reset  salary</button>
