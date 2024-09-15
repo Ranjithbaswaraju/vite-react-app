@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react"
+import Screen from "./screen"
 
-function UseMemoEx2(){
+function UseMemoEx3(){
 
     const[age,setAge]=useState(10)
     const[salary,setSalary]=useState(1000)
@@ -24,15 +25,16 @@ function UseMemoEx2(){
     
     return(
         <>
-        <h2>{age } {ageEvenChecker}</h2>
-        <h2>{salary}</h2>
-
-        <button onClick={setSalaryHandler}>Increase salary</button>
-        <button onClick={setAgeHandler}>Increase Age</button>
+    <Screen 
+    age={age}
+    ageEvenChecker={ageEvenChecker}
+    salary={salary}
+    setSalaryHandler={setSalaryHandler}
+    setAgeHandler={setAgeHandler}/>
         
         </>
        
     )
 
 }
-export default UseMemoEx2
+export default UseMemoEx3
