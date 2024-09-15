@@ -6,6 +6,8 @@ import { UserDeatails } from "../navigations/navigation-stack"
 
 import withProfile from "../hoc/withProfile.jsx"
 import withCounter from "../hoc/withCounter.jsx"
+import useAxios from "../components/hooks/customHooks/useAxios.jsx"
+import { json } from "react-router-dom"
 
 
 // const Homescreen=({profile})=>{
@@ -23,9 +25,15 @@ import withCounter from "../hoc/withCounter.jsx"
 // export default withProfile(Homescreen)
 
 const Homescreen=({count,incrementHandler})=>{
-    // console.log()
+    const [recipes,error,loading]=useAxios('https://dummyjson.com/recipes')
+    console.log(recipes,"recipesitems")
 
-    // const{salary}=useContext(UserDeatails)
+    if(loading){
+        return<h3>please wait.....</h3>
+    }
+    if(error){
+        return<h2>{JSON.stringify(error)}</h2>
+    }
     return(
         <>
         <h2>{count}</h2>

@@ -2,11 +2,15 @@ import { useContext } from "react"
 import Navbar from "../components/navbar/navbar"
 import { GlobalCounter, UserDeatails } from "../navigations/navigation-stack"
 import { incrementAction } from "../navigations/counterHelper"
+import useAxios from "../components/hooks/customHooks/useAxios"
 
 
 const AboutScreen=()=>{
 
      const{darkHandler,salaryHandler,resetsalaryHandler,decreasesalaryHandler}=useContext(UserDeatails)
+
+    const[products,error,loading]=useAxios('https://dummyjson.com/products')
+    console.log(products)
 
     const {currentState,dispatch}=useContext(GlobalCounter)
     console.log(currentState)

@@ -7,12 +7,12 @@ import NavigationStack from './navigations/navigation-stack.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import UseMemo from './components/hooks/useMemo/useMemo.jsx';
 import UseMemoEx2 from './components/hooks/useMemo/useMemoEx.jsx';
+import UseCallbackExample from './components/hooks/useCallback/useCallback.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-    {/* <UseMemo/> */}
-    <UseMemoEx2/>
+   <NavigationStack/>
     </BrowserRouter>
   
   </React.StrictMode>,

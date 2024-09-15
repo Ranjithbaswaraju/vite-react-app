@@ -3,10 +3,14 @@ import { Link, Outlet } from "react-router-dom";
 import { GlobalCounter } from "../navigations/navigation-stack";
 import { incrementAction, } from "../navigations/counterHelper";
 import { decrementAction } from "../navigations/counterHelper";
+import useAxios from "../components/hooks/customHooks/useAxios";
 export const CategoryScreen = () => {
 
 
   const{dispatch}=useContext(GlobalCounter)
+
+ const [categories,error,loading]= useAxios('https://fakestoreapi.com/products/categories')
+ console.log(categories,"categoriescategories")
   const incrementHandler=()=>{
     dispatch( incrementAction)
   }
