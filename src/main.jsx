@@ -12,11 +12,14 @@ import CrudExample from './screens/crud.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-   {/* <NavigationStack/> */}
-   <CrudExample/>
+  
+  
+   <BrowserRouter>
+{/* <NavigationStack/>
+  <CrudExample/> */}
 
     </BrowserRouter>
+  <App/>
 
   
   </React.StrictMode>,
