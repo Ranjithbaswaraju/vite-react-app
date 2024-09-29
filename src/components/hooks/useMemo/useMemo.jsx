@@ -1,7 +1,4 @@
 import { useMemo, useState } from "react"
-
-
-
 const UseMemo=()=>{
 
     const[milkQuantity,setmilkQuantity]=useState(1)
@@ -22,11 +19,6 @@ const UseMemo=()=>{
         const priceOfRice=100
         return riceQuantity*priceOfRice
     },[riceQuantity])
-
-    
-    
-
-    
 
     const milkHandler=()=>{
         setmilkQuantity(milkQuantity+1)
