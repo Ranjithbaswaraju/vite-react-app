@@ -11,13 +11,14 @@ import UseCallbackExample from './components/hooks/useCallback/useCallback.jsx';
 import CrudExample from './screens/crud.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-   {/* <NavigationStack/> */}
-   <CrudExample/>
+  // <React.StrictMode>
+  //   <BrowserRouter>
+  //  {/* <NavigationStack/> */}
+  //  <CrudExample/>
 
-    </BrowserRouter>
+  //   </BrowserRouter>
 
   
-  </React.StrictMode>,
+  // </React.StrictMode>,
+  <App/>
 )
