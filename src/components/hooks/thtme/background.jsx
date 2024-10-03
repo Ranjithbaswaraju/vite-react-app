@@ -1,27 +1,21 @@
-import React, { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
-const EvenOddBackground = () => {
-  const [number, setNumber] = useState('');
+const EvenOddBackground=()=>{
+  const[number,setNumber]=useState("")
 
-  // Function to handle input change
-  const handleChange = (e) => {
-    setNumber(e.target.value);
-  };
+  const colorHandler=(event)=>{
+    setNumber(event.target.value)
+  }
 
-  // Determine background color based on whether the number is even or odd
-  const backgroundColor = number && number % 2 === 0 ? 'black' : 'white';
-
-  return (
-    <div style={{ backgroundColor: backgroundColor, height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <input 
-        type="number" 
-        value={number} 
-        onChange={handleChange} 
-        placeholder="Enter a number" 
-        style={{ padding: '10px', fontSize: '18px' }} 
-      />
+  const backgroundColor=number%2===0 ?'black':'orange'
+  return(
+    <>
+    <div style={{backgroundColor,height:'100vh',width:'100vw' ,display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <input type="text" value={number} onChange={colorHandler} placeholder="enter a to change background color"/>
+    <p>{}</p>
     </div>
-  );
-};
-
-export default EvenOddBackground;
+    </>
+  )
+}
+export default EvenOddBackground
