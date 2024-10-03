@@ -1,5 +1,6 @@
 import React from "react";
 import Ranjith from "./components/hooks/thtme/themeChngaer";
+import EvenOddBackground from "./components/hooks/thtme/background";
 
 // import UseEffectExample from "./components/hooks/useEffect/useEffcetEx";
 // import UseEffectExample2 from "./components/hooks/useEffect/useEffectEx2";
@@ -9,11 +10,7 @@ import Ranjith from "./components/hooks/thtme/themeChngaer";
 const App = () => {
   return (
     <>
-      {/* <UseEffectExample/> */}
-      {/* <UseEffectExample2/> */}
-      {/* <UseEffectExample3/> */}
-      {/* <Search/> */}
-      <Ranjith />
+      <EvenOddBackground/>
     </>
   );
 }
