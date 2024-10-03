@@ -7,7 +7,7 @@ function Component1(props) {
   return (
     <Card style={{ width: '22rem' ,textAlign:'center'}}>
       
-      <Card.Body>
+      <Card.Body  >
         <Card.Title  style={{
             display: '-webkit-box',
             WebkitLineClamp: 2,
@@ -16,11 +16,12 @@ function Component1(props) {
             textOverflow: 'ellipsis',
             height:'50px',
            
+           
         }}>{title}</Card.Title>
         <Card.Img variant="top" src={image} height={'200'} width={'200'}/>
         <Card.Text style={{
             display: '-webkit-box',
-            WebkitLineClamp: 2,
+            WebkitLineClamp: 3,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
