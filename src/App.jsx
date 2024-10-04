@@ -1,16 +1,13 @@
 import React from "react";
-import Ranjith from "./components/hooks/thtme/themeChngaer";
-import EvenOddBackground from "./components/hooks/thtme/background";
 
-// import UseEffectExample from "./components/hooks/useEffect/useEffcetEx";
-// import UseEffectExample2 from "./components/hooks/useEffect/useEffectEx2";
-// import UseEffectExample3 from "./components/hooks/useEffect/useEffectEx3";
-// import Search from "./components/search/search";
+import Even from "./components/hooks/thtme/evenorodd";
+
+
 
 const App = () => {
   return (
     <>
-      <EvenOddBackground/>
+      <Even/>
     </>
   );
 }
