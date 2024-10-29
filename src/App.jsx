@@ -5,6 +5,8 @@ import EvenOddChecker from "./components/hooks/thtme/input";
 import MockExample from "./components/hooks/mock/mock";
 import StopWatchApp from "./components/hooks/watch/stopwatch";
 import Stopwatch from "./components/hooks/watch/stopwatch";
+import GoogleMap from "./components/google-maps/maps";
+
 
 // import UseEffectExample from "./components/hooks/useEffect/useEffcetEx";
 // import UseEffectExample2 from "./components/hooks/useEffect/useEffectEx2";
@@ -15,7 +17,7 @@ const App = () => {
   return (
     <>
      {/* <MockExample/> */}
-     <Stopwatch/>
+     <GoogleMap/>
     </>
   );
 }
