@@ -1,6 +1,6 @@
 import React from "react";
 
-import Uncontrolled from "./Practice/uncontrolled";
+import UseEffect from "./Practice/useEffect";
 
 
 
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
     
-    <Uncontrolled/>
+    <UseEffect/>
     </>
   );
 }
