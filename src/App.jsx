@@ -1,6 +1,7 @@
 import React from "react";
-import Ranjith from "./components/hooks/thtme/themeChngaer";
-import UseStateCounter from "./Practice/useState";
+import UseRefExample from "./Practice/useRef";
+import UseRefprev from "./Practice/refRef2";
+
 
 
 
@@ -8,7 +9,8 @@ const App = () => {
   return (
     <>
     
-    <UseStateCounter/>
+    {/* <UseRefExample/> */}
+    <UseRefprev/>
     </>
   );
 }
