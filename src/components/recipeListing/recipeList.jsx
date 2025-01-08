@@ -3,12 +3,7 @@ import CustomDNALoader from '../Loader/loader';
 import CustomList from '../list/custom-list';
 import { SecondaryHeading } from '../../header/header';
 import axios from 'axios';
-
-
-
 class RecipeList extends Component{
-
-
     state={
         recipes:[],
         loading:true,
@@ -18,7 +13,6 @@ class RecipeList extends Component{
         //I can call the server to fetch data
         this.fetchData();
     }
-
     fetchData=async()=>{
         const {status,data}=await axios.get('https://dummyjson.com/recipes')
         if(status===200){
@@ -28,17 +22,14 @@ class RecipeList extends Component{
             })
         }
     }
-
     render(){
         return(
             <>
             <h2>Prodduct List</h2>
             {/* ACCESING THE DATA and binding data form empty array */}
-
             {
                 this.state.loading?<CustomDNALoader/>:
                 <><h2>Data presnt</h2>
-
                 {
                 
                     this.state.recipes.map(eachRecipe=>{
@@ -56,11 +47,7 @@ class RecipeList extends Component{
                     })
                 }          
             </>
-           
-
-            
             }
-
             </>
         )
     }

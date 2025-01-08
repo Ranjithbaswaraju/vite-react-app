@@ -2,8 +2,6 @@ import axios from "axios";
 import { Component } from "react";
 import CustomDNALoader from "../Loader/loader";
 import InstagramHert from "../heart/instagram-heart";
-
-
 class Fakestore extends Component{
     state={
         products:[],
@@ -24,7 +22,6 @@ class Fakestore extends Component{
             })
         }
     }
-
     render(){
         
         return(
