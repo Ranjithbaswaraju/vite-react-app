@@ -11,7 +11,7 @@ const App=()=>{
     <h1>Hello</h1>
     <h2>bye</h2>
     {/* <Heading/> */}
-    <Table/>
+    {/* <Table/> */}
     <Card/>
     <Ranjith/>
     </>
