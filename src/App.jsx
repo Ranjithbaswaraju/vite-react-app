@@ -1,6 +1,6 @@
 import React from "react";
-import UseRefExample from "./Practice/useRef";
-import UseRefprev from "./Practice/refRef2";
+
+import Uncontrolled from "./Practice/uncontrolled";
 
 
 
@@ -9,8 +9,7 @@ const App = () => {
   return (
     <>
     
-    {/* <UseRefExample/> */}
-    <UseRefprev/>
+    <Uncontrolled/>
     </>
   );
 }
