@@ -1,6 +1,7 @@
 import React from "react";
 
-import UseEffect from "./Practice/useEffect";
+
+import UseEffectfetch from "./Practice/useEffectfetch";
 
 
 
@@ -9,7 +10,7 @@ const App = () => {
   return (
     <>
     
-    <UseEffect/>
+    <UseEffectfetch/>
     </>
   );
 }
