@@ -1,31 +1,32 @@
-import { useEffect, useState } from "react";
-import React  from "react";
 import axios from "axios";
-
+import React from "react";
+import { useState,useEffect } from "react";
 
 const UseEffectfetch=()=>{
+    const[data,setData]=useState([])
+        useEffect(()=>{
 
-    const[data,setData]=useState([[]])
-
-    useEffect(()=>{
-        const dataFetch=async()=>{
-            const response=await axios.get('https://dummyjson.com/recipes')
-            setData(response.data.recipes)
-        }
-        dataFetch()
-    })
+            const fetchData=async()=>{
+                const response=await axios.get('https://fakestoreapi.com/products')
+                setData(response.data)
+            }
+            fetchData()
+        },[])
     return(
         <>
         {
             data.map((item)=>{
                 return(
-                    <>
+                    <ol key={item.id}>
                     <li>{item.id}</li>
-                    <li>{item.image}</li>
-                    </>
+                    <li>{item.title}</li>
+                    <li>{item.price}</li>
+                    <li>{item.description}</li>
+                    </ol>
                 )
             })
         }
+
         </>
     )
 }
