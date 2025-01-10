@@ -14,6 +14,8 @@ const UseRefprev=()=>{
     
     return(
         <>
+
+        
         <h2>Previous count:{inputRef.current}</h2>
         <h2>Current count:{count}</h2>
         <button onClick={countHandler}>Count</button>
