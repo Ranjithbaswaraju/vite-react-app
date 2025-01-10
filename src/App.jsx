@@ -1,6 +1,6 @@
 import React from "react";
 import UsememoExample from "./Practice/useMemo";
-import UseCallback from "./Practice/useCallback";
+import UseCallback from "./Practice/useCallback2";
 
 
 
