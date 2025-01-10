@@ -1,5 +1,6 @@
 import React from "react";
 import UsememoExample from "./Practice/useMemo";
+import UseCallback from "./Practice/useCallback";
 
 
 
@@ -9,7 +10,7 @@ const App=()=>{
   const message="Hello World"
   return(
     <>
-   <UsememoExample/>
+   <UseCallback/>
     </>
   )
 }

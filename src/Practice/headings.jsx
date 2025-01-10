@@ -2,12 +2,13 @@ import React from "react";
 
 
 const MainHeading=(prop)=>{
+    console.log("Clicked")
     const{heading}=prop
     return<>
     <h1>{heading}</h1>
     </>
 }
-export default MainHeading
+export default React.memo(MainHeading)
 
 
 
