@@ -4,7 +4,7 @@
 // import React, { useEffect, useState } from "react";
 
 // const Search=()=>{
-//     const[products,setProducts]=useState([]J)
+//     const[products,setProducts]=useState([])
 //     const[searchQuery,setSearchQuery]=useState()
 //     const[filteredData,setFilterdData]=useState([])
 // useEffect(()=>{
@@ -56,3 +56,32 @@
 
 
 
+// export default Search
+
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
+
+const Search=()=>{
+
+    const[product,setProducts]=useState([])
+    const[filterData,setFilterdData]=useState([])
+    const[searchQuary,setSearchQuary]=useState()
+
+    useEffect(()=>{
+        fetchData()
+    },[])
+
+    const fetchData=async()=>{
+        const response=await axios.get('https://dummyjson.com/recipes')
+        setProducts(response.data)
+       
+    }
+    console.log(setProducts)
+    return(
+        <>
+
+        </>
+    )
+}
+export default Search;
