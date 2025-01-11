@@ -1,6 +1,6 @@
 import React from "react";
-import UsememoExample from "./Practice/useMemo";
-import UseCallback from "./Practice/useCallback2";
+import UserReducerExample from "./Practice/useReducer";
+
 
 
 
@@ -10,7 +10,7 @@ const App=()=>{
   const message="Hello World"
   return(
     <>
-   <UseCallback/>
+  <UserReducerExample/>
     </>
   )
 }
