@@ -18,8 +18,8 @@ const App=()=>{
 {/* <UseEffectExample/> */}
 {/* <UseEffectExample2/> */}
 {/* <UseEffectExample3/> */}
-{/* <TableComponet/> */}
-<MapContainer/>
+<TableComponet/>
+{/* <MapContainer/> */}
     </>
   )
 }
