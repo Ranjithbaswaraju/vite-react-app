@@ -1,6 +1,7 @@
 import React from "react";
 
-import UserReducerExample3 from "./Practice/useReduceerExample3";
+
+import UserReducerExample4 from "./Practice/useReduceradding";
 
 
 
@@ -11,7 +12,7 @@ const App=()=>{
   const message="Hello World"
   return(
     <>
-  <UserReducerExample3/>
+  <UserReducerExample4/>
     </>
   )
 }
