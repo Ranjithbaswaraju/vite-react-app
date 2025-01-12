@@ -7,3 +7,10 @@ inorder to decrease the load time and increase the performance we will split the
 
 
 lazyLoading:
+
+
+CRUD:
+
+No.of useStates required for crud operations
+
+1.UseState-input, todos

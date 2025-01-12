@@ -1,7 +1,8 @@
 import React from "react";
 
 
-import UserReducerExample4 from "./Practice/useReduceradding";
+
+import CrudOperations from "./Practice/crud";
 
 
 
@@ -12,7 +13,7 @@ const App=()=>{
   const message="Hello World"
   return(
     <>
-  <UserReducerExample4/>
+  <CrudOperations/>
     </>
   )
 }
