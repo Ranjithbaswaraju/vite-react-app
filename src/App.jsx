@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-import CrudOperations from "./Practice/crud";
+import CrudUpdation from "./Practice/crud2updation";
 
 
 
@@ -13,7 +13,7 @@ const App=()=>{
   const message="Hello World"
   return(
     <>
-  <CrudOperations/>
+  <CrudUpdation/>
     </>
   )
 }
