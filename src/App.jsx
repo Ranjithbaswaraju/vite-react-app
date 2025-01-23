@@ -1,7 +1,8 @@
 import React from "react";
 
 
-import TableUncontrolledComponent from "./Practice/tableuncontrolled";
+
+import ControlledComponent from "./Practice/controlledComonent";
 
 
 
@@ -12,7 +13,7 @@ const App=()=>{
  
   return(
     <>
-  <TableUncontrolledComponent/>
+  <ControlledComponent/>
     </>
   )
 }
