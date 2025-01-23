@@ -2,7 +2,8 @@ import React from "react";
 
 
 
-import ControlledComponentFull from "./Practice/controlledfull";
+
+import ThemeChanger from "./Practice/background";
 
 
 
@@ -13,7 +14,7 @@ const App=()=>{
  
   return(
     <>
-  <ControlledComponentFull/>
+  <ThemeChanger/>
     </>
   )
 }
