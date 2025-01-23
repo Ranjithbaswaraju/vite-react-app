@@ -1,6 +1,7 @@
 import React from "react";
 
-import UncontrolledComponent from "./Practice/uncontrolledform";
+
+import TableUncontrolledComponent from "./Practice/tableuncontrolled";
 
 
 
@@ -11,7 +12,7 @@ const App=()=>{
  
   return(
     <>
-  <UncontrolledComponent/>
+  <TableUncontrolledComponent/>
     </>
   )
 }
