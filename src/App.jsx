@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-import ControlledComponent from "./Practice/controlledComonent";
+import ControlledComponentFull from "./Practice/controlledfull";
 
 
 
@@ -13,7 +13,7 @@ const App=()=>{
  
   return(
     <>
-  <ControlledComponent/>
+  <ControlledComponentFull/>
     </>
   )
 }
