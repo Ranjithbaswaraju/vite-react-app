@@ -14,8 +14,8 @@ import Stopwatch from "./components/hooks/watch/stopwatch";
 const App = () => {
   return (
     <>
-     {/* <MockExample/> */}
-     <Stopwatch/>
+     <MockExample/>
+     {/* <Stopwatch/> */}
     </>
   );
 }
