@@ -8,8 +8,8 @@ import EvenOddBackground from "./components/hooks/thtme/background";
 const App = () => {
   return (
     <>
-      {/* <Even/> */}
-      <EvenOddBackground/>
+      <Even/>
+      {/* <EvenOddBackground/> */}
     </>
   );
 }
