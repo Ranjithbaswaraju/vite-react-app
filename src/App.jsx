@@ -25,10 +25,10 @@ const Parent=({message})=>{
     <>
     <h1>Parent Component</h1>
     <Child message={message}/>
-    </>
-    
+    </>   
   )
 }
+
 
 const App=()=>{
   const message="Hello World"
@@ -39,5 +39,4 @@ const App=()=>{
     </>
   )
 }
-
 export default App
