@@ -1,23 +1,25 @@
-
-import React from "react";
-import { useState,useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const UseRefprev=()=>{
-    const[count,setCount]=useState(1)
-    const inputRef=useRef(0)
 
-    const countHandler=()=>{
+    const[count,setCount]=useState(10)
+    const inputRef=useRef("")
+
+    const ClickHandler=()=>{
+
         inputRef.current=count
-    
+
         setCount(count+1)
     }
-    
-    return(
-        <>
-        <h2>Previous count:{inputRef.current}</h2>
-        <h2>Current count:{count}</h2>
-        <button onClick={countHandler}>Count</button>
-        </>
+
+    return (
+
+      <>
+        <p>Previous Count :{inputRef.current}</p>
+        <p>Present Count:{count}</p>
+        <button onClick={ClickHandler}>Click here</button>
+      </>
     )
 }
+
 export default UseRefprev
