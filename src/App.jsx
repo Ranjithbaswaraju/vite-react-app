@@ -1,24 +1,19 @@
 import React, { createContext,useContext } from "react";
-import CardComponent from "./Practice/card";
-import CardAddition from "./Practice/card-add";
+
 import ChildComponent from "./Practice/contextapi";
-
-
-
-
-
-
-export  const MessageContext=createContext()
+export const MessageContext=createContext()
 
 const App = () => {
-
-  const message="Hello"
+  const message="Ranjith"
   return(
+    <>
     <MessageContext.Provider value={message}>
-      <h1>Hello World</h1>
-      <ChildComponent/>
+      <h1>Hello</h1>
+    <ChildComponent/>
     </MessageContext.Provider>
+    </>
   )
+  
 
  
 }
