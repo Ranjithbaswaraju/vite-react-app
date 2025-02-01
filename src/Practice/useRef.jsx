@@ -1,20 +1,21 @@
-import React from "react";
-import { useRef } from "react";
+
+import React, { useRef } from "react";
 
 const UseRefExample=()=>{
-    const inputRef=useRef(null)
+    const inputRef=useRef("")
 
-    const handleClick=()=>{
+    const clickHandler=(event)=>{
+        event.preventDefault()
         inputRef.current.focus()
     }
 
     return(
         <>
-        <input type="text" ref={inputRef} placeholder="click here for focus "/>
-        <button onClick={handleClick}>Click</button>
-        
+        <form onSubmit={clickHandler}>
+            <input type="text" ref={inputRef} placeholder="Color Chnages"/>
+            <button type="submit">Click Here</button>
+        </form>
         </>
     )
 }
-
 export default UseRefExample
