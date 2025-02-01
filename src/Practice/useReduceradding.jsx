@@ -80,51 +80,125 @@
 // export default UserReducerExample4
 
 
-import React, { act, useReducer, useState } from "react";
+// import React, { act, useReducer, useState } from "react";
+
+// const reducer=(state,action)=>{
+//         switch(action.type){
+//             case "ADD_ITEM":
+//                 return {...state,todos:[...state.todos,action.payload]}
+//         }
+// }
+
+
+// const UserReducerExample4=()=>{
+//     const initialState={
+//         userName:"ranjith",
+//         todos:[]
+//     }
+
+
+
+
+//     const [currentState,dispatch]=useReducer(reducer,initialState)
+//     const[name,setName]=useState("")
+
+//     const nameHandler=(event)=>{
+//         setName(event.target.value)
+//     }
+//     const addHandler=()=>{
+//         if(setName){
+//             dispatch({
+//                 type:"ADD_ITEM",
+//                 payload:name
+//             })
+//         }
+//         setName("")
+//     }
+    
+
+//     return(
+//         <>
+//         <input type="text" onChange={nameHandler} value={name}/>
+//         <button onClick={addHandler}>ADD</button>
+//         {
+//             currentState.todos.map((eachItem)=>{
+//                 return(
+//                     <>
+//                     <h1>{eachItem}</h1>
+//                     </>
+//                 )
+//             })
+//         }
+
+//         </>
+//     )
+// }
+// export default UserReducerExample4
+
+
+
+
+import React, { useReducer, useState } from "react";
 
 const reducer=(state,action)=>{
-        switch(action.type){
-            case "ADD_ITEM":
-                return {...state,todos:[...state.todos,action.payload]}
-        }
+    switch(action.type){
+        case "CHANGE":
+            return {...state,userName:action.payload}
+        case "ADD_TODO":
+            return {...state,todos:[...state.todos,action.payload]}
+    }
 }
 
-
 const UserReducerExample4=()=>{
+const[name,setName]=useState("")
+const[enteredTodo,setEnteredTodo]=useState("")
     const initialState={
         userName:"ranjith",
         todos:[]
     }
 
-
-
-
-    const [currentState,dispatch]=useReducer(reducer,initialState)
-    const[name,setName]=useState("")
-
-    const nameHandler=(event)=>{
+    const chnageHandler=(event)=>{
         setName(event.target.value)
     }
-    const addHandler=()=>{
-        if(setName){
-            dispatch({
-                type:"ADD_ITEM",
-                payload:name
-            })
-        }
+
+    const clickHandler=()=>{
+        dispatch({
+            type:"CHANGE",
+            payload:name
+        })
         setName("")
     }
-    
+
+    const addHandler=(event)=>{
+        setEnteredTodo(event.target.value)
+    }
+
+    const addClick=()=>{
+        if(enteredTodo){
+            dispatch({
+                type:"ADD_TODO",
+                payload:enteredTodo
+            })
+        }
+        setEnteredTodo("")
+    }
+
+    const[currentState,dispatch]=useReducer(reducer,initialState)
 
     return(
         <>
-        <input type="text" onChange={nameHandler} value={name}/>
-        <button onClick={addHandler}>ADD</button>
+        <p>Name:{currentState.userName}</p>
+        <input type="text" value={name} onChange={chnageHandler}/>
+        <button onClick={clickHandler}>Change Name</button>
+        <input type="text" value={enteredTodo} onChange={addHandler}/>
+        <button onClick={addClick}>ADD_NAME</button>
         {
-            currentState.todos.map((eachItem)=>{
+            currentState.todos.map((item)=>{
                 return(
                     <>
-                    <h1>{eachItem}</h1>
+                    <ol >
+                        <li>{item}</li>
+                    </ol>
                     </>
                 )
             })
