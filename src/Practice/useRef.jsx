@@ -1,20 +1,15 @@
-
 import React, { useRef } from "react";
 
-const UseRefExample=()=>{
-    const inputRef=useRef("")
+const UseRefExample = () => {
+    const inputRef=useRef(null)
 
-    const clickHandler=(event)=>{
-        event.preventDefault()
+    const onSubmit=()=>{
         inputRef.current.focus()
     }
-
     return(
         <>
-        <form onSubmit={clickHandler}>
-            <input type="text" ref={inputRef} placeholder="Color Chnages"/>
-            <button type="submit">Click Here</button>
-        </form>
+        <input type="text" ref={inputRef}/>
+        <button onClick={onSubmit}>Click me</button>
         </>
     )
 }
