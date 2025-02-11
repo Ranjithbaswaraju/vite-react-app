@@ -18,10 +18,10 @@ const App=()=>{
     <>
    
     {/* <FakeTable/> */}
-    {/* <Filter/> */}
+    <Filter/>
 {/* <RecipeList/> */}
 {/* <Fakestore/> */}
-<WeatherApp/>
+{/* <WeatherApp/> */}
 
     
 
