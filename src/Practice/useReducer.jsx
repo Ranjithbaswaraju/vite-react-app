@@ -36,36 +36,34 @@
 
 
 import React, { useReducer } from "react";
-
-
 const reducer=(state,action)=>{
     switch(action.type){
         case "INC":
             return {...state,age:state.age+action.payload}
         default:
             return state
+
     }
 }
-const UserReducerExample=()=>{
 
+const UserReducerExample=()=>{
     const initialState={
-        age:10
+        age:30
     }
     const[currentState,dispatch]=useReducer(reducer,initialState)
 
-    const clickHandler=()=>{
+    const handler=()=>{
         dispatch({
-            type:"INC",
+            type:'INC',
             payload:2
         })
     }
     return(
-        <>
+    <>
+    <p>{currentState.age}</p>
+    <button onClick={handler}>Increment age</button>
 
-        <p>{currentState.age}</p>
-        <button onClick={clickHandler}>Click Here</button>
-        </>
+    </>
     )
 }
-
 export default UserReducerExample
