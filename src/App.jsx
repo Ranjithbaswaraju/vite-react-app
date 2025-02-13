@@ -1,8 +1,9 @@
 import React from "react";
+import ParentComponent from "./Practice/parent";
 
 
 
-import CrudUpdation from "./Practice/crud2updation";
+
 
 
 
@@ -13,7 +14,7 @@ const App=()=>{
   const message="Hello World"
   return(
     <>
-  <CrudUpdation/>
+  <ParentComponent/>
     </>
   )
 }
