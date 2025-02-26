@@ -289,8 +289,6 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 
-
-
 const UncontrolledComponent=()=>{
 
     const inputRef=useRef("")
@@ -375,7 +373,7 @@ const UncontrolledComponent=()=>{
           <span style={{color:"red"}}>{formErrors?.passwordError}</span>
         </div>
         
-        <button type="submit" className="btn btn-default">
+        <button type="submit" className="btn btn-default" style={{backgroundColor:'aqua'}}>
           Submit
         </button>
         {apiErr && <p style={{color:"red"}}>{apiErr}</p>}
