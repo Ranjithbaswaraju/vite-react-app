@@ -139,45 +139,104 @@
 // }
 // export default ControlledComponent
 
+// import React, { useState } from "react";
+
+// const ControlledComponent=()=>{
+//     const[model,SetModel]=useState('')
+//     const[modelErr,SetModelErr]=useState("")
+
+//     const handler=(event)=>{
+//         const modelName=event.target.value
+//         console.log(modelName)
+//         SetModel(modelName)
+
+//         const error=modelValidator(modelName)
+
+//         if(error){
+//             SetModelErr(error)
+//         }
+//         else{
+//             SetModelErr("")
+//         }
+//     }
+//     const modelValidator=(value)=>{
+//         let err=""
+
+//         const modelRegex=/^samsung/i
+
+//         if(!value){
+//             err='please enter the model name'
+//         }
+//         else if(!modelRegex.test(value)){
+//             err='please enter the proper model name'
+//         }
+//         return err
+//     }
+
+//     const onSubmit=(event)=>{
+
+//         event.preventDefault()
+//         if(modelErr){
+//             alert("please fill properly")
+//         }
+//         else{
+//             //hit the api
+//         }
+//     }
+//     return(
+//         <form onSubmit={onSubmit}>
+//   <div className="form-group">
+//     <label htmlFor="email">Email address:</label>
+//     <input type="text" className="form-control" id="email" value={model} onChange={handler}/>
+//     {modelErr && <p style={{color:'red'}}>{modelErr}</p>}
+//   </div>
+//   <button type="submit" className="btn btn-default">
+//     Submit
+//   </button>
+// </form>
+//     )
+// }
+// export default ControlledComponent
+
+
 import React, { useState } from "react";
 
+
 const ControlledComponent=()=>{
-    const[model,SetModel]=useState('')
-    const[modelErr,SetModelErr]=useState("")
+    const[model,setModel]=useState("")
+    const[modelErr,setModelErr]=useState('')
 
-    const handler=(event)=>{
-        const modelName=event.target.value
-        console.log(modelName)
-        SetModel(modelName)
 
-        const error=modelValidator(modelName)
+    const modelHandler=(event)=>{
+        const enteredModel=event.target.value
+        setModel(enteredModel)
+
+        let error=validations(enteredModel)
 
         if(error){
-            SetModelErr(error)
+            setModelErr(error)
         }
         else{
-            SetModelErr("")
+            setModelErr('')
         }
     }
-    const modelValidator=(value)=>{
-        let err=""
 
-        const modelRegex=/^samsung/i
-
+    const validations=(value)=>{
+        let err=''
+        const regex=/^samsung/i
         if(!value){
             err='please enter the model name'
         }
-        else if(!modelRegex.test(value)){
+        else if(!regex.test(value)){
             err='please enter the proper model name'
         }
         return err
     }
-
     const onSubmit=(event)=>{
-
         event.preventDefault()
         if(modelErr){
             alert("please fill properly")
+           setModel("")
         }
         else{
             //hit the api
@@ -186,14 +245,16 @@ const ControlledComponent=()=>{
     return(
         <form onSubmit={onSubmit}>
   <div className="form-group">
-    <label htmlFor="email">Email address:</label>
-    <input type="text" className="form-control" id="email" value={model} onChange={handler}/>
-    {modelErr && <p style={{color:'red'}}>{modelErr}</p>}
+    <label htmlFor="username">Email address:</label>
+    <input type="text" className="form-control" id="username" value={model} onChange={modelHandler}/>
+    <span style={{color:'red'}}>{modelErr}</span>
   </div>
+  
   <button type="submit" className="btn btn-default">
     Submit
   </button>
 </form>
+
     )
 }
 export default ControlledComponent
