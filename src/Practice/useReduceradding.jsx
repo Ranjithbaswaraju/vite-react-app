@@ -226,7 +226,7 @@ const UserReducerExample4 = () => {
         <button onClick={addHandler}>Add</button>
         <ol>
         {
-              currentState.todos.map((each,id)=>{
+              currentState.todos.map((each)=>{
                 return(
                     <li key={each.id}>{each}</li>
                 )
