@@ -35,3 +35,46 @@
 // export default UseMemoSearch
 
 
+import React, { useMemo, useState } from "react";
+
+const UseMemoSearch = () => {
+    const[seach,setSeach]=useState("")
+    const arr=['apple','banana','cat']
+
+    const handler=(event)=>{
+        setSeach(event.target.value)
+    }
+
+    const filterData=useMemo(()=>{
+        return arr.filter((item)=>(
+            item.toLowerCase().includes(seach.toLowerCase())
+        ))
+    },[seach])
+        
+    
+
+    return(
+        <>
+            <input value={seach} onChange={handler}/>
+            
+            
+                
+            {
+                filterData.length==0 ? (<p style={{color:"red"}}>No results found</p>)
+                :(
+                    filterData.map((item)=>{
+                        return(
+                           <>
+                            <li>{item}</li>
+                           </>
+                        )
+                    })
+                )
+
+            }
+
+
+        </>
+    )
+}
+export default UseMemoSearch
