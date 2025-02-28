@@ -16,10 +16,10 @@
 
 
 import react, { useContext } from "react"
-import {WelCome} from "./App"
+import {Welcome} from "../App"
 
 const Child=()=>{
-    const message=useContext(WelCome)
+    const message=useContext(Welcome)
     return(
         <>
         <p>{message}</p>
