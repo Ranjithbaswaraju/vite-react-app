@@ -1,43 +1,37 @@
-
-
 import React, { useMemo, useState } from "react";
 
+
 const UsememoExample=()=>{
-    const[riceQty,setRiceQty]=useState(0)
+    const[riceQty,setRiceQty]=useState(0);
     const[milkQty,setMilkQty]=useState(0)
 
+    const milkHandler=useMemo(()=>{
+        const price=50
+        console.log("milk price calculation>>>>>")
+        return price*milkQty
 
-    const RiceHandler=useMemo(()=>{
-        console.log("Rice")
-        const priceofRice=50
-        return riceQty*priceofRice
+    },[milkQty])
+    const riceHandler=useMemo(()=>{
+        const price=100
+        console.log("rice price calculation>>>>>")
+        return price*riceQty
     },[riceQty])
 
-    const MilkHandler=useMemo(()=>{
-        console.log("Milk")
-        const pricofMilk=100
-        
-        return milkQty*pricofMilk
-    },[milkQty])
-
-    const handleMilk=()=>{
+    const milkInc=()=>{
         setMilkQty(milkQty+1)
     }
 
-    const handleRice=()=>{
+    const riceInc=()=>{
         setRiceQty(riceQty+1)
     }
-
-
     return(
         <>
-         <h4 >riceQty:{riceQty} price-{RiceHandler}</h4>
-         <h4 >milkQty:{milkQty} price-{MilkHandler}</h4>
-         <button onClick={handleRice}>Click Here-Rice</button>
-         <button onClick={handleMilk}>Click Here-Milk</button>
-
-
+        <p>Rice-Quantity-{riceQty} && Price-{riceHandler}</p>
+        <p>Milk-Quantity-{milkQty} && price-{milkHandler}</p>
+        <button onClick={milkInc}>MilK</button>
+        <button onClick={riceInc}>Rice</button>
         </>
     )
+
 }
 export default UsememoExample
