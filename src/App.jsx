@@ -3,7 +3,7 @@
 // import { GoogleApiWrapper } from "google-maps-react";
 import UseEffectExample3 from "./components/hooks/useEffect/useEffectEx3";
 import TableComponet from "./mock/table";
-import { MapContainer } from "./google/google";
+// import { MapContainer } from "./google/google";
 
 
 
