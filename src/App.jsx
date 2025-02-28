@@ -41,43 +41,37 @@
 // }
 // export default App
 
+import React  from "react";
 
-import React from "react";
-
-
-const Grand=({ranjith})=>{
+const Grand=({message})=>{
   return(
-    <>
-    <p>{ranjith}</p>
-    </>
-  )
-}
-const Child=({ranjith})=>{
-  return(
-    <>
-    <h1>GrandChild</h1>
-    <Grand ranjith={ranjith}/>
-    </>
+    <h1>{message}</h1>
   )
 }
 
-const Parent=({ranjith})=>{
+const Child=({message})=>{
+  return(
+    <>
+    <h1>Child Component</h1>
+    <Grand message={message}/>
+    </>
+  )
+}
+const Parent=({message})=>{
   return(
     <>
     <h1>Parent Component</h1>
-    <Child ranjith={ranjith}/>
+    <Child message={message}/>
     </>
   )
 }
 const App=()=>{
-  const message='RANJITH'
+  const message='Hello World'
   return(
-    <>
-
-
-    <h1>App component</h1>
-    <Parent ranjith={message}/>
-    </>
+   <>
+    <h1>App Component</h1>
+    <Parent message={message}/>
+   </>
   )
 }
-export default App;
+export default App
