@@ -51,57 +51,112 @@
 // }
 // export default UserReducerExample2
 
-import React, { useReducer, useState } from "react";
+// import React, { useReducer, useState } from "react";
+
+// const reducer=(state,action)=>{
+//     switch(action.type){
+//         case "INC":
+//             return {...state,age:state.age+1}
+//         case "change_name":
+//             return {...state,username:action.payload}
+//         default:
+//             return state
+//     }
+// }
+// const UserReducerExample2=()=>{
+//     const[name,setName]=useState("")
+
+//     const initialState={
+//         username:"ranjith",
+//         age:30
+//     }
+    
+//     const[currentState,dispatch]=useReducer(reducer,initialState)
+//     const handler=(event)=>{
+//         setName(event.target.value)
+//     }
+
+//     const onSubmit=(event)=>{
+//         event.preventDefault()
+//         dispatch({
+//             type:"change_name",
+//             payload:name
+//         })
+//     }
+
+//     const onClick=()=>{
+//         dispatch({
+//             type:"INC",
+//             // payload:2
+//         })
+//     }
+
+    
+//     return(
+//         <>
+//         <p>age:{currentState.age}</p>
+//         <p>name:{currentState.username}</p>
+//         <input type="text" value={name} onChange={handler}/>
+//         <button onClick={onClick}>Age Increase</button>
+//         <button onClick={onSubmit}>Change Name</button>
+//         </>
+
+//     )
+// }
+// export default UserReducerExample2
+
+
+
+import React, { act, useReducer, useState } from "react";
 
 const reducer=(state,action)=>{
     switch(action.type){
         case "INC":
-            return {...state,age:state.age+1}
-        case "change_name":
+            return {...state,age:state.age+action.payload}
+        case "Change_Name":
             return {...state,username:action.payload}
         default:
             return state
     }
 }
 const UserReducerExample2=()=>{
-    const[name,setName]=useState("")
 
     const initialState={
-        username:"ranjith",
-        age:30
+        age:30,
+        username:'ranjith',
+        todos:["wake up at 8am","breakfast at 10am"]
+    }
+    const[name,setName]=useState("")
+    const[currentState,dispatch]=useReducer(reducer,initialState)
+
+    const handler=()=>{
+        dispatch({
+            type:'INC',
+            payload:2
+        })
     }
     
-    const[currentState,dispatch]=useReducer(reducer,initialState)
-    const handler=(event)=>{
-        setName(event.target.value)
-    }
-
-    const onSubmit=(event)=>{
-        event.preventDefault()
+    const onsubmit1=()=>{
         dispatch({
-            type:"change_name",
+            type:"Change_Name",
             payload:name
         })
     }
 
-    const onClick=()=>{
-        dispatch({
-            type:"INC",
-            // payload:2
-        })
+    const handler1=(event)=>{
+        setName(event.target.value)
     }
-
-    
     return(
         <>
-        <p>age:{currentState.age}</p>
-        <p>name:{currentState.username}</p>
-        <input type="text" value={name} onChange={handler}/>
-        <button onClick={onClick}>Age Increase</button>
-        <button onClick={onSubmit}>Change Name</button>
-        </>
+        <p>Age:{currentState.age}</p>
+        <button onClick={handler}>Increase Age</button>
+    
+        <p>Name:{currentState.username}</p>
+        <input type="text" value={name} onChange={handler1}/>
+        <button onClick={onsubmit1}>Change Name</button>
 
+        
+        </>
     )
 }
 export default UserReducerExample2
-
