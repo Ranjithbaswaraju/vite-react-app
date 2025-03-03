@@ -200,8 +200,6 @@
 
 
 import React, { useState } from "react";
-
-
 const ControlledComponent=()=>{
     const[model,setModel]=useState("")
     const[modelErr,setModelErr]=useState('')
@@ -217,6 +215,7 @@ const ControlledComponent=()=>{
             setModelErr(error)
         }
         else{
+           
             setModelErr('')
         }
     }
@@ -240,11 +239,13 @@ const ControlledComponent=()=>{
         }
         else{
             //hit the api
+            alert("enterd details are correct")
         }
     }
     return(
         <form onSubmit={onSubmit}>
   <div className="form-group">
+    <h1>Entering the samsung model</h1>
     <label htmlFor="username">Email address:</label>
     <input type="text" className="form-control" id="username" value={model} onChange={modelHandler}/>
     <span style={{color:'red'}}>{modelErr}</span>
