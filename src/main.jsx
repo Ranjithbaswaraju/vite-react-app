@@ -9,14 +9,15 @@ import UseMemo from './components/hooks/useMemo/useMemo.jsx';
 import UseMemoEx2 from './components/hooks/useMemo/useMemoEx.jsx';
 import UseCallbackExample from './components/hooks/useCallback/useCallback.jsx';
 import CrudExample from './screens/crud.jsx';
+import { reduxData } from './redux/store.js';
+import { Provider } from 'react-redux';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-   {/* <NavigationStack/> */}
-   <CrudExample/>
-
-    </BrowserRouter>
+    <Provider store={reduxData}>
+      <NavigationStack/>
+    </Provider>
 
   
   </React.StrictMode>,
