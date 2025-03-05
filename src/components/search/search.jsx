@@ -87,6 +87,7 @@ const Search=()=>{
 
     return(
         <>
+        <h1>Search items here</h1>
         <input type="text" onChange={changeHandler} value={searchQuery}/>
         {
             filterdData.length>0?
