@@ -56,52 +56,60 @@
 // }
 // export default CrudUpdation
 
-
 import React, { useState } from "react";
 
 const CrudUpdation = () => {
-    const[name,setName]=useState("")
-    const[todos,setTodos]=useState([])
-    const[selectItem,setSelectItem]=useState(null)
+    const[input,setInput]=useState("")
+    const[todo,setTodo]=useState([])
+    const[selectedItem,setSelectedItem]=useState(null)
 
-    const changeHandler=(event)=>{
-        setName(event.target.value)
+    const inputHandler=(event)=>{
+        setInput(event.target.value)
     }
 
-    const addHandler=(event)=>{
-        event.preventDefault()
-        setTodos([...todos,name])
-        setName("")
+    const addTodo=(e)=>{
+        e.preventDefault()
+        setTodo([...todo,input])
     }
+
     const deleteHandler=(ind)=>{
-        const updated=todos.filter((_,index)=>index!==ind)
-        setTodos(updated)
+        const updatedTodo=todo.filter((_,index)=>index!=ind)
+        setTodo(updatedTodo)
     }
-    const updatedHandler=(ind)=>{
-
+    const updateHandler=(ind)=>{
+        setSelectedItem(ind)
+        const name=todo[ind]
+        setInput(name)
+    }
+    const updateTodo=(e)=>{
+        e.preventDefault()
+        const copy=[...todo]
+        copy[selectedItem]=input
+        setTodo(copy)
+        setSelectedItem("")
+        setInput("")
     }
     return(
+
         <>
-        <form onSubmit={addHandler}>
-            <input type="text" value={name} onChange={changeHandler}/>
-            <button type="submit" >Add_Todo</button>
-
-        </form>
-
-        <ol>
+            <form onSubmit={selectedItem||selectedItem===0 ? updateTodo : addTodo}>
+            <input type="text" value={input} onChange={inputHandler}/>
+            <button type="submit">{selectedItem||selectedItem===0 ? "updateTodo" : "addTodo"}</button>
+            
+            </form>
+            <ol>
             {
-                todos?.map((item,index)=>{
+                todo?.map((item,index)=>{
                     return(
                         <>
                         <li key={index}>{item}</li>
-                        <button onClick={()=>deleteHandler(index)}>Delete</button>
-                        <button onClick={()=>updatedHandler(index)}>Update</button>
+                        <button onClick={()=>deleteHandler(index)}>DELETE</button>
+                        <button onClick={()=>updateHandler(index)}>UPDATE</button>
                         </>
                     )
                 })
             }
-        </ol>
-
+            </ol>
         </>
     )
 }
