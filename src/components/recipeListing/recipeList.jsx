@@ -56,8 +56,6 @@ class RecipeList extends Component{
                     })
                 }          
             </>
-           
-
             
             }
 
