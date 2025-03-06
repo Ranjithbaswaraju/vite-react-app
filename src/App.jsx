@@ -1,6 +1,6 @@
 import React from "react";
 
-import UseMemoSearch from "./Practice/useMemosearch";
+import UseMemoSearch from "./Practice/useMemoSearch";
 
 
 

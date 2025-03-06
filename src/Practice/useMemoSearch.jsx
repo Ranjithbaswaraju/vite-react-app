@@ -55,11 +55,12 @@ const UseMemoSearch = () => {
 
     return(
         <>
+        <h1>Search available fruits </h1>
             <input value={seach} onChange={handler}/>
             
             
-                
-            {
+               <ol>
+               {
                 filterData.length==0 ? (<p style={{color:"red"}}>No results found</p>)
                 :(
                     filterData.map((item)=>{
@@ -72,6 +73,8 @@ const UseMemoSearch = () => {
                 )
 
             }
+                </ol> 
+            
 
 
         </>
