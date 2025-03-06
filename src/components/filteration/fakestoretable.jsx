@@ -1,24 +1,17 @@
 import axios from "axios";
 import { Component } from 'react';
 import style from "./fake.module.css";
-import CustomDNALoader from "../Loader/loader";
-
-
-
-
+import CustomDNALoader from "../Loader/loader"
 
 class FakeTable extends Component{
-    
     state={
         products:[],
         loading:true,
         error:false
     }
-
     componentDidMount(){
         this.fetchData()
     }
-
      fetchData=async()=>{
         const {status,data}=await axios.get('https://fakestoreapi.com/products')
         if(status===200){
