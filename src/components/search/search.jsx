@@ -15,7 +15,7 @@
 //     const fetchData=async()=>{
 //             const response=await axios.get('https://dummyjson.com/products')
 //             setProducts(response.data.products)
-//            
+           
 //     }
 //     const handler=(event)=>{
 //         event.preventDefault()
@@ -52,56 +52,56 @@
 
 
 import axios from "axios";
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-
-const Search=()=>{
-
+import React, { useEffect, useState } from "react";
+const Search = () => {
     const[products,setProducts]=useState([])
-    const[searchQuery,setSearchQuery]=useState("")
-    const[filterdData,setFilterdData]=useState([])
-    
+    const[query,setQuery]=useState('')
+    const[filteredData,setFilteredData]=useState([])
     useEffect(()=>{
-        finalData()
+fetchData()
     },[])
-
-    const finalData=async()=>{
-        
-        const response=await axios.get('https://dummyjson.com/recipes')
-        setProducts(response.data.recipes)
-        
+    const fetchData=async()=>{
+        try{
+            const response=await axios.get('https://dummyjson.com/recipes')
+            setProducts(response.data.recipes)
+            setFilteredData(response.data.recipes)
+        }
+        catch(error){
+            console.log(error)
+        }
     }
+    const handler=(event)=>{
+        const query1=event.target.value.toLowerCase()
+        setQuery(query1)
 
-    const changeHandler=(event)=>{
+        const final=products.filter((item)=>{
+            return item.name.toLowerCase().includes(query1)
 
-        const query=event.target.value.toLowerCase()
-        setSearchQuery(query)
-
-
-        const filter=products.filter((items)=>{
-            return items.name.toLowerCase().includes(query)
         })
-        setFilterdData(filter)
+        setFilteredData(final)
     }
-
     return(
         <>
-        <h1>Search items here</h1>
-        <input type="text" onChange={changeHandler} value={searchQuery}/>
+        <input type="text" value={query} onChange={handler}/>
+        <ol>
         {
-            filterdData.length>0?
-            filterdData.map((item)=>{
-                return(
-                    <>
-                    <li>{item.name}</li>
-                    </>
-                )
-            }):(
-                <li style={{color:'red'}}>No result Found</li>
+            filteredData.length === 0 ?  (<h2>No data found</h2>)
+            :
+            (
+                filteredData.map((item)=>{
+                    return(
+                        <>
+                        <li>{item.name}</li>
+                        </>
+                    )
+                })
             )
+           
         }
+        </ol>
+        
         </>
     )
 }
 export default Search
+
