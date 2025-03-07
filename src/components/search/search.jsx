@@ -107,16 +107,17 @@
 
 
 
+
 import axios from "axios";
-import raact, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
 
 const Search = () => {
     const[products,setProducts]=useState([])
-    const[input,setInput]=useState('')
+    const[input,setInput]=useState("")
 
-    const changeHandler=(event)=>{
-        
-        setInput(event.target.value)
+    const handleChange=(e)=>{
+        setInput(e.target.value)
     }
 
     useEffect(()=>{
@@ -127,7 +128,6 @@ const Search = () => {
         try{
             const response=await axios.get('https://dummyjson.com/products')
             setProducts(response.data.products)
-            console.log(response.data.products)
         }
         catch(err){
             console.log(err)
@@ -135,23 +135,21 @@ const Search = () => {
     }
     return(
         <>
-        <input type="text" onChange={changeHandler} value={input}/>
+        <input type="text" onChange={handleChange} value={input}/>
         {
             products &&
 
             products.filter((item)=>{
                 return item.title.toLowerCase().includes(input.toLowerCase())
-
-            }).map((items)=>{
+            }).map((item)=>{
                 return(
                     <>
-                      <li>{items.title}</li>  
+                    <p>{item.title}</p>
                     </>
                 )
-            })
+            })  
         }
         </>
     )
-
 }
-export default  Search
+export default Search
