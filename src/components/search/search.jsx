@@ -51,57 +51,107 @@
 // export default Search;
 
 
+// import axios from "axios";
+// import React, { useEffect, useState } from "react";
+// const Search = () => {
+//     const[products,setProducts]=useState([])
+//     const[query,setQuery]=useState('')
+//     const[filteredData,setFilteredData]=useState([])
+//     useEffect(()=>{
+// fetchData()
+//     },[])
+//     const fetchData=async()=>{
+//         try{
+//             const response=await axios.get('https://dummyjson.com/recipes')
+//             setProducts(response.data.recipes)
+//             setFilteredData(response.data.recipes)
+//         }
+//         catch(error){
+//             console.log(error)
+//         }
+//     }
+//     const handler=(event)=>{
+//         const query1=event.target.value.toLowerCase()
+//         setQuery(query1)
+
+//         const final=products.filter((item)=>{
+//             return item.name.toLowerCase().includes(query1)
+
+//         })
+//         setFilteredData(final)
+//     }
+//     return(
+//         <>
+//         <input type="text" value={query} onChange={handler}/>
+//         <ol>
+//         {
+//             filteredData.length === 0 ?  (<h2>No data found</h2>)
+//             :
+//             (
+//                 filteredData.map((item)=>{
+//                     return(
+//                         <>
+//                         <li>{item.name}</li>
+//                         </>
+//                     )
+//                 })
+//             )
+           
+//         }
+//         </ol>
+        
+//         </>
+//     )
+// }
+// export default Search
+
+
+
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import raact, { useEffect, useState } from "react";
+
 const Search = () => {
     const[products,setProducts]=useState([])
-    const[query,setQuery]=useState('')
-    const[filteredData,setFilteredData]=useState([])
+    const[input,setInput]=useState('')
+
+    const changeHandler=(event)=>{
+        
+        setInput(event.target.value)
+    }
+
     useEffect(()=>{
-fetchData()
+        fetchData()
     },[])
+
     const fetchData=async()=>{
         try{
-            const response=await axios.get('https://dummyjson.com/recipes')
-            setProducts(response.data.recipes)
-            setFilteredData(response.data.recipes)
+            const response=await axios.get('https://dummyjson.com/products')
+            setProducts(response.data.products)
+            console.log(response.data.products)
         }
-        catch(error){
-            console.log(error)
+        catch(err){
+            console.log(err)
         }
-    }
-    const handler=(event)=>{
-        const query1=event.target.value.toLowerCase()
-        setQuery(query1)
-
-        const final=products.filter((item)=>{
-            return item.name.toLowerCase().includes(query1)
-
-        })
-        setFilteredData(final)
     }
     return(
         <>
-        <input type="text" value={query} onChange={handler}/>
-        <ol>
+        <input type="text" onChange={changeHandler} value={input}/>
         {
-            filteredData.length === 0 ?  (<h2>No data found</h2>)
-            :
-            (
-                filteredData.map((item)=>{
-                    return(
-                        <>
-                        <li>{item.name}</li>
-                        </>
-                    )
-                })
-            )
-           
+            products &&
+
+            products.filter((item)=>{
+                return item.title.toLowerCase().includes(input.toLowerCase())
+
+            }).map((items)=>{
+                return(
+                    <>
+                      <li>{items.title}</li>  
+                    </>
+                )
+            })
         }
-        </ol>
-        
         </>
     )
-}
-export default Search
 
+}
+export default  Search
