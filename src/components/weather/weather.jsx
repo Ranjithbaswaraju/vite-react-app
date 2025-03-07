@@ -10,8 +10,8 @@ class WeatherApp extends Component {
         Humitidy: '',
         Temperature: '',
         windSpeed: '',
-        imageUrl: '', // Add imageUrl to state
-        isVisible: false // Add isVisible to control visibility
+        imageUrl: '',
+        isVisible: false 
     }
 
     componentDidMount() {
@@ -52,13 +52,13 @@ class WeatherApp extends Component {
             Temperature: data.main.temp_max,
             windSpeed: data.wind.speed,
             imageUrl: imageUrl,
-            isVisible: true // Show the data when fetched
+            isVisible: true 
         });
     }
 
     toggleVisibility = () => {
         this.setState(prevState => ({
-            isVisible: !prevState.isVisible // Toggle visibility
+            isVisible: !prevState.isVisible 
         }));
     }
 
