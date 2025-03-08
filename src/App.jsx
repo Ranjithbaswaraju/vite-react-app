@@ -4,14 +4,14 @@ import UserReducerExample3 from "./Practice/useReduceerExample3";
 
 
 
-
+import Divs from "./Practice/divs"
 
 
 const App=()=>{
-  const message="Hello World"
+  
   return(
     <>
-  <UserReducerExample3/>
+    <Divs/>
     </>
   )
 }
