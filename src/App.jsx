@@ -18,7 +18,7 @@ const App=()=>{
 {/* <UseEffectExample/> */}
 {/* <UseEffectExample2/> */}
 {/* <UseEffectExample3/> */}
-<TableComponet/>
+{/* <TableComponet/> */}
 {/* <MapContainer/> */}
     </>
   )
