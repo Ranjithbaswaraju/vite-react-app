@@ -18,8 +18,6 @@ const UseEffectExample3=()=>{
         
     }
 
-
-
     return(
         <>
         <h2>Current state--{salary}</h2>
