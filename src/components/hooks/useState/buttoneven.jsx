@@ -17,11 +17,11 @@ const Button1=()=>{
                 return(
                     <>
                     
-                    <button key={each.id} onClick={()=>handleCLick(each.id)} style={{width:'100px'}}>{each.text}</button>
+                    <button key={each.id} onClick={()=>(each.id)} style={{width:'100px'}}>{each.text}</button>
                 
                     </>
                     
-                )
+                )handleCLick
             })
         }
        
