@@ -205,6 +205,7 @@ const ControlledComponent=()=>{
     const[modelErr,setModelErr]=useState('')
 
 
+
     const modelHandler=(event)=>{
         const enteredModel=event.target.value
         setModel(enteredModel)
