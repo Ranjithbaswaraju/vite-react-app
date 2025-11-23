@@ -16,8 +16,8 @@ const App=()=>{
 {/* <UseEffectExample/> */}
 {/* <UseEffectExample2/> */}
 {/* <UseEffectExample3/> */}
-<User/>
-<Search/>
+{/* <User/> */}
+{/* <Search/> */}
 
     </>
   )
