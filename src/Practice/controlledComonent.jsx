@@ -199,64 +199,138 @@
 // export default ControlledComponent
 
 
+// import React, { useState } from "react";
+// const ControlledComponent=()=>{
+//     const[model,setModel]=useState("")
+//     const[modelErr,setModelErr]=useState('')
+
+
+
+//     const modelHandler=(event)=>{
+//         const enteredModel=event.target.value
+//         setModel(enteredModel)
+
+//         let error=validations(enteredModel)
+
+//         if(error){
+//             setModelErr(error)
+//         }
+//         else{
+           
+//             setModelErr('')
+//         }
+//     }
+//         const validations=(value)=>{
+//         let err=''
+//         const regex=/^samsung/i
+//         if(!value){
+//             err='please enter the model name'
+//         }
+//         else if(!regex.test(value)){
+//             err='please enter the proper model name'
+//         }
+//         return err
+//     }
+//     const onSubmit=(event)=>{
+//         event.preventDefault()
+//         if(modelErr){
+//             alert("please fill properly")
+//            setModel("")
+//         }
+//         else{
+//             //hit the api
+//             alert("enterd details are correct")
+//         }
+//     }
+//     return(
+//         <form onSubmit={onSubmit}>
+//   <div className="form-group">
+//     <h1>Entering the samsung model</h1>
+//     <label htmlFor="username">Email address:</label>
+//     <input type="text" className="form-control" id="username" value={model} onChange={modelHandler}/>
+//     <span style={{color:'red'}}>{modelErr}</span>
+//   </div>
+  
+//   <button type="submit" className="btn btn-default">
+//     Submit
+//   </button>
+// </form>
+
+//     )
+// }
+// export default ControlledComponent
+
+
 import React, { useState } from "react";
+import { use } from "react";
+
 const ControlledComponent=()=>{
-    const[model,setModel]=useState("")
-    const[modelErr,setModelErr]=useState('')
+    const[mdl,setMdl]=useState("")
+    const[mdlErr,setMdlErr]=useState('')
 
+    const mdlHandler=(e)=>{
+        const mdlEntered=e.target.value
+        setMdl(mdlEntered)
 
-
-    const modelHandler=(event)=>{
-        const enteredModel=event.target.value
-        setModel(enteredModel)
-
-        let error=validations(enteredModel)
-
+        const error=modelValidator(mdlEntered)
         if(error){
-            setModelErr(error)
+            setMdlErr(error)
         }
         else{
-           
-            setModelErr('')
+            setMdlErr("")
         }
+        
     }
 
-    const validations=(value)=>{
-        let err=''
-        const regex=/^samsung/i
-        if(!value){
-            err='please enter the model name'
+    const onSubmit=(e)=>{
+        e.preventDefault()
+        if(mdlErr){
+            alert("please fill properly")
+           
         }
-        else if(!regex.test(value)){
+        else{
+            //
+            alert('Enter correct model')
+        }
+
+    }
+    
+    const modelValidator=(value)=>{
+        let err=''
+        let Regex=/^samsung/i
+        if(!value){
+            err='Please enter model Name'
+        }
+        else if(!Regex.test(value)){
             err='please enter the proper model name'
         }
         return err
     }
-    const onSubmit=(event)=>{
-        event.preventDefault()
-        if(modelErr){
-            alert("please fill properly")
-           setModel("")
-        }
-        else{
-            //hit the api
-            alert("enterd details are correct")
-        }
-    }
+
+
     return(
+        <>
         <form onSubmit={onSubmit}>
   <div className="form-group">
-    <h1>Entering the samsung model</h1>
-    <label htmlFor="username">Email address:</label>
-    <input type="text" className="form-control" id="username" value={model} onChange={modelHandler}/>
-    <span style={{color:'red'}}>{modelErr}</span>
+    <label htmlFor="username">Email address</label>
+    <input
+      type="text"
+      className="form-control"
+      id="username"
+      value={mdl}
+      onChange={mdlHandler}
+    
+      placeholder="Enter email"
+    />
+    <span style={{color:'red'}}>{mdlErr}</span>
+    
   </div>
   
-  <button type="submit" className="btn btn-default">
+  <button type="submit" className="btn btn-primary">
     Submit
   </button>
 </form>
-
+        </>
     )
 }
 export default ControlledComponent
