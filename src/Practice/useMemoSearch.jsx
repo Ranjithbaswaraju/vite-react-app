@@ -35,48 +35,123 @@
 // export default UseMemoSearch
 
 
-import React, { useMemo, useState } from "react";
+// import React, { useMemo, useState } from "react";
 
-const UseMemoSearch = () => {
-    const[seach,setSeach]=useState("")
-    const arr=['apple','banana','cat']
+// const UseMemoSearch = () => {
+//     const[seach,setSeach]=useState("")
+//     const arr=['apple','banana','cat']
 
-    const handler=(event)=>{
-        setSeach(event.target.value)
-    }
+//     const handler=(event)=>{
+//         setSeach(event.target.value)
+//     }
 
-    const filterData=useMemo(()=>{
-        return arr.filter((item)=>(
-            item.toLowerCase().includes(seach.toLowerCase())
-        ))
-    },[seach])
+//     const filterData=useMemo(()=>{
+//         return arr.filter((item)=>(
+//             item.toLowerCase().includes(seach.toLowerCase())
+//         ))
+//     },[seach])
         
     
 
-    return(
+//     return(
+//         <>
+//         <h1>Search available fruits </h1>
+//             <input value={seach} onChange={handler}/>
+            
+            
+//                <ol>
+//                {
+//                 filterData.length==0 ? (<p style={{color:"red"}}>No results found</p>)
+//                 :(
+//                     filterData.map((item)=>{
+//                         return(
+//                            <>
+//                             <li>{item}</li>
+//                            </>
+//                         )
+//                     })
+//                 )
+
+//             }
+//                 </ol> 
+            
+
+
+//         </>
+//     )
+// }
+// export default UseMemoSearch
+
+// import React, { useState } from "react";
+
+// const UseMemoSearch = () => {
+//     const items=["apples",'banana','cat','ball','boy']
+//     const[input,setInput]=useState("")
+
+//     const filteredData=items.filter((item)=>{
+//         return item.toLowerCase().includes(input.toLowerCase())
+//     })
+
+//     const handler=(e)=>{
+//         setInput(e.target.value)
+//     }
+//     return (
+//         <>
+
+//         <input type="text" value={input} onChange={handler}/>
+//         {
+//             filteredData.length > 0 ? (
+//                 <ol>
+//                  {
+//                     filteredData.map((item)=>{
+//                         return(
+//                             <li>{item}</li>
+//                         )
+//                     })
+//                  }   
+//                 </ol>
+//             ):(
+//                 <p>No result</p>
+//             )
+//         }
+//         </>
+//     )
+// }
+// export default UseMemoSearch
+
+
+import React, { useMemo, useState } from "react";
+
+const UseMemoSearch = () => {
+    const items=["apple","banana","cat","ball","boy"]
+    const[input,setInput]=useState("")
+
+    const filteredData=useMemo(()=>{
+        return items.filter((item)=>{
+            return item.toLowerCase().includes(input.toLowerCase())
+        })
+    })
+
+    const handler=(e)=>[
+        setInput(e.target.value)
+    ]
+    return (
         <>
-        <h1>Search available fruits </h1>
-            <input value={seach} onChange={handler}/>
-            
-            
-               <ol>
-               {
-                filterData.length==0 ? (<p style={{color:"red"}}>No results found</p>)
-                :(
-                    filterData.map((item)=>{
-                        return(
-                           <>
-                            <li>{item}</li>
-                           </>
-                        )
-                    })
-                )
-
-            }
-                </ol> 
-            
-
-
+        <input type="text" value={input} onChange={handler}/>
+        {
+            filteredData.length > 0 ? (
+                <ol>
+                    {
+                        filteredData.map((item)=>{
+                            return(
+                                <li>{item}</li>
+                            )
+                    
+                })
+                    }
+                </ol>
+            ):(<p>No result</p>)
+        }
         </>
     )
 }
