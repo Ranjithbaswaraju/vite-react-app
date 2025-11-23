@@ -22,19 +22,24 @@
 import React, { useState } from "react";
 
 
-const EvenOddBackground = () => {
+const EvenOddBackground=()=>{
   const[number,setNumber]=useState("")
 
-  const evenHandler=(e)=>{
+
+  const handler=(e)=>{
     setNumber(e.target.value)
   }
 
-const backgroundColor=number%2==0?"green":"violet"
+  let backgroundColor='white'
+  if(number !== "" && !isNaN(number)){
+    backgroundColor = number%2===0 ? 'black' :'violet'
+  }
 
   return(
-    <div style={{backgroundColor,height:"100vh",width:"100%",display:'flex',justifyContent:"center",alignItems:"center"}}>
-      <input type="text" value={number} onChange={evenHandler}/>
+    <div style={{backgroundColor,height:'100vh',width:'100vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+      <input type='text' value={number} onChange={handler}/>
     </div>
   )
+
 }
-export default EvenOddBackground
+export default EvenOddBackground;

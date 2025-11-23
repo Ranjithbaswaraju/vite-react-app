@@ -1,6 +1,4 @@
-
 // import React, { useState } from "react";
-
 
 // const Even=()=>{
 //     const[number,setNumber]=useState("")
@@ -20,23 +18,83 @@
 // }
 // export default Even
 
+// import React, { useState } from "react";
+
+// const Even=()=>{
+//     const[number,setNumber]=useState("")
+
+//     const handler=(event)=>{
+//         setNumber(event.target.value)
+//     }
+
+//     const result=isNaN(number)||number===""?"":
+//     number%2==0?"even":"odd"
+
+//     return(
+//             <>
+//             <input type="text" value={number} onChange={handler}/>
+//             <p>The numebr is :{result}</p>
+//             </>
+//     )
+// }
+// export default Even
+
+// import React, { useState } from "react";
+
+// const Even = () => {
+//   const [number, setNumber] = useState("");
+//   let result = "";
+
+//   const handler = (e) => {
+//     setNumber(e.target.value);
+//   };
+
+//   // check condition
+//   if (number === "" || isNaN(number)) {
+//     result = "";
+//   } else if (number % 2 === 0) {
+//     result = "even";
+//   } else {
+//     result = "odd";
+//   }
+
+//   return (
+//     <>
+//       <input type="text" value={number} onChange={handler} />
+//       <p>The number is: {result}</p>
+//     </>
+//   );
+// };
+
+// export default Even;
+
 import React, { useState } from "react";
 
 const Even=()=>{
-    const[number,setNumber]=useState("")
 
-    const handler=(event)=>{
-        setNumber(event.target.value)   
+    const[number,setNumber]=useState("")
+    let result=''
+
+    const handler=(e)=>{
+        setNumber(e.target.value)
     }
 
-    const result=isNaN(number)||number===""?"":
-    number%2==0?"even":"odd"
+    if(number===""||isNaN(number)){
+        result=""
+    }
+    else if(number % 2==0){
+        result="even"
+    }
+    else{
+        result="odd"
+    }
 
     return(
-            <>
-            <input type="text" value={number} onChange={handler}/>
-            <p>The numebr is :{result}</p>
-            </>
+        <>
+        <input type="text" value={number} onChange={handler}/>
+        <p>The Entered Number is :{result}</p>
+        </>
     )
+
 }
-export default Even
+export default Even;
