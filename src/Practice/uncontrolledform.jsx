@@ -384,91 +384,177 @@
 // export default UncontrolledComponent
 
 
+// import axios from "axios";
+// import React, { useRef, useState } from "react";
+
+// const UncontrolledComponent = () => {
+
+//     const userNameRef=useRef("")
+//     const passwordRef=useRef("")
+//     const[formError,setFromError]=useState("")
+//     const[apiErr,setApiErr]=useState("")
+
+//     const onSubmit=(event)=>{
+//         event.preventDefault()
+
+//         const usernameEntered=userNameRef.current.value
+//         const passwordEntered=passwordRef.current.value
+
+//         const formError=validations(usernameEntered,passwordEntered)
+
+//         if(Object.keys(formError).length>0){
+//             setFromError(formError)
+//         }
+//         else{
+//             loginApi(usernameEntered,passwordEntered)
+//             setFromError("")
+//         }
+        
+
+//     }
+
+//     const validations=(username,password)=>{
+//         const Form={};
+
+//         if(!username){
+//             Form.usernameError="please enter the username"
+//         }
+//         else if(username.length>20){
+//             Form.usernameError="please enter the less then 20 characters"
+//         }
+
+//         if(!password){
+//             Form.passwordError="please enter the password"
+//         }
+//         else if(password.length>20){
+//             Form.passwordError="please enter the less than 20 characters"
+//         }
+//         return Form
+        
+//     }
+
+//     const loginApi=async(username,password)=>{
+//         try{
+//             const response=await axios.post('https://dummyjson.com/auth/login',{
+//                 username:username,
+//                 password:password
+
+//             })
+//             console.log(response)
+//             setApiErr("")
+            
+            
+//         }
+//         catch(err){
+//             console.log(err)
+//             setApiErr("please enter the correct values")
+//         }
+       
+//     }
+//     return(
+//         <form onSubmit={onSubmit}>
+//   <div className="form-group">
+//     <label htmlFor="username">Email address:</label>
+//     <input type="text" className="form-control" id="username" ref={userNameRef}/>
+//     <span style={{color:'red'}}>{formError?.usernameError}</span>
+//   </div>
+//   <div className="form-group">
+//     <label htmlFor="pwd">Password:</label>
+//     <input type="password" className="form-control" id="pwd" ref={passwordRef}/>
+//     <span style={{color:'red'}}>{formError?.passwordError}</span>
+//   </div>
+//   <button type="submit" className="btn btn-default">
+//     Submit
+//   </button>
+//   {apiErr && <p style={{color:"red"}}>{apiErr}</p>}
+// </form>
+
+//     )
+// }
+// export default UncontrolledComponent
+
+
 import axios from "axios";
 import React, { useRef, useState } from "react";
 
-const UncontrolledComponent = () => {
-
-    const userNameRef=useRef("")
+const UncontrolledComponent=()=>{
+    const usernameRef=useRef("")
     const passwordRef=useRef("")
-    const[formError,setFromError]=useState("")
+    const[formError,setFromError]=useState('')
     const[apiErr,setApiErr]=useState("")
 
-    const onSubmit=(event)=>{
-        event.preventDefault()
+    const onSubmit=(e)=>{
+        e.preventDefault()
 
-        const usernameEntered=userNameRef.current.value
+        const usernameEntered=usernameRef.current.value
         const passwordEntered=passwordRef.current.value
 
-        const formError=validations(usernameEntered,passwordEntered)
+        const forms=validations(usernameEntered,passwordEntered)
 
-        if(Object.keys(formError).length>0){
-            setFromError(formError)
-        }
-        else{
-            loginApi(usernameEntered,passwordEntered)
-            setFromError("")
-        }
+    if(Object.keys(forms).length>0){
+        setFromError(forms)
+    }
+    else{
+        loginApi(usernameEntered,passwordEntered)
+        setFromError("")
         
-
+    }
     }
 
     const validations=(username,password)=>{
-        const Form={};
+        let form={}
 
         if(!username){
-            Form.usernameError="please enter the username"
+            form.usernameError='please enter the username'
         }
         else if(username.length>20){
-            Form.usernameError="please enter the less then 20 characters"
+            form.usernameError='Please Enter lessthan 20 Characters'
         }
-
         if(!password){
-            Form.passwordError="please enter the password"
+            form.passwordError='please enter the password'
         }
         else if(password.length>20){
-            Form.passwordError="please enter the less than 20 characters"
+            form.passwordError='Please Enter less than 20 characters'
         }
-        return Form
-        
+        return form
     }
 
-    const loginApi=async(username,password)=>{
+    let loginApi=async(username,password)=>{
         try{
             const response=await axios.post('https://dummyjson.com/auth/login',{
-                username:username,
-                password:password
-
+                username,
+                password
             })
             console.log(response)
-            setApiErr("")
-            
-            
+            setApiErr('Details are corrrect')
         }
         catch(err){
             console.log(err)
-            setApiErr("please enter the correct values")
+            setApiErr('please enter the correct values')
         }
-       
     }
     return(
+        <>
         <form onSubmit={onSubmit}>
   <div className="form-group">
-    <label htmlFor="username">Email address:</label>
-    <input type="text" className="form-control" id="username" ref={userNameRef}/>
+    <label htmlFor="username">Email address</label>
+    <input type="text" id="username" ref={usernameRef}/>
     <span style={{color:'red'}}>{formError?.usernameError}</span>
+   
   </div>
   <div className="form-group">
-    <label htmlFor="pwd">Password:</label>
-    <input type="password" className="form-control" id="pwd" ref={passwordRef}/>
+    <label htmlFor="password">Password</label>
+    <input type="password" id="password" ref={passwordRef}/>
     <span style={{color:'red'}}>{formError?.passwordError}</span>
   </div>
-  <button type="submit" className="btn btn-default">
+  
+  <button type="submit" className="btn btn-primary">
     Submit
   </button>
-  {apiErr && <p style={{color:"red"}}>{apiErr}</p>}
+  <span style={{color:'red'}}>{apiErr}</span>
 </form>
 
+        </>
     )
 }
-export default UncontrolledComponent
+export default UncontrolledComponent;
