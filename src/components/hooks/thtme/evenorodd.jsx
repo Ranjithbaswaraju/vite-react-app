@@ -68,31 +68,65 @@
 
 // export default Even;
 
+// import React, { useState } from "react";
+
+// const Even=()=>{
+
+//     const[number,setNumber]=useState("")
+//     let result=''
+
+//     const handler=(e)=>{
+//         setNumber(e.target.value)
+//     }
+
+//     if(number===""||isNaN(number)){
+//         result=""
+//     }
+//     else if(number % 2==0){
+//         result="even"
+//     }
+//     else{
+//         result="odd"
+//     }
+
+//     return(
+//         <>
+//         <input type="text" value={number} onChange={handler}/>
+//         <p>The Entered Number is :{result}</p>
+//         </>
+//     )
+
+// }
+// export default Even;
+
+
 import React, { useState } from "react";
 
-const Even=()=>{
 
-    const[number,setNumber]=useState("")
+const Even=()=>{
+    const[number,setNumber]=useState('')
     let result=''
 
     const handler=(e)=>{
         setNumber(e.target.value)
     }
 
-    if(number===""||isNaN(number)){
+    if((number==="" || isNaN(number))){
         result=""
     }
-    else if(number % 2==0){
-        result="even"
-    }
-    else{
-        result="odd"
-    }
+        else if(number%2==0){
+            result='even'
+        }
+        else{
+            result='odd'
+        }
+    
 
+    
     return(
         <>
-        <input type="text" value={number} onChange={handler}/>
-        <p>The Entered Number is :{result}</p>
+        <input value={number} onChange={handler}/>
+        <p>The entered Number is :{result}</p>
         </>
     )
 
