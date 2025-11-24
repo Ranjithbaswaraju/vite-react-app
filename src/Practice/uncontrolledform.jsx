@@ -1,13 +1,8 @@
-
 // import axios from "axios"
 // import React, { useState } from "react"
 // import { useRef } from "react"
 
-
-
-
 // const UncontrolledComponent=()=>{
-    
 
 //     const usernameRef=useRef("")
 //     const passwordRef=useRef("")
@@ -18,7 +13,6 @@
 
 //         const usernameEntered=usernameRef.current.value
 //         const passwordEntered=passwordRef.current.value
-
 
 //        const formErrors= validations(usernameEntered,passwordEntered)
 
@@ -40,7 +34,7 @@
 //             const response=await axios.post('https://dummyjson.com/auth/login',{
 //                 "username": username,
 //                 "password": password,
-                
+
 //             })
 //             console.log(response)
 //         }
@@ -51,7 +45,6 @@
 
 //     const validations=(username,password)=>{
 //         const formErrors={}
-
 
 //         if(!username){
 //             formErrors.usernameError ="Please Enter user name"          //username doesnot entered
@@ -80,34 +73,25 @@
 //     <input type="password" className="form-control" id="pwd" ref={passwordRef}/>
 //     <span style={{color:'red'}}>{formErrors?.passwordError}</span>
 //   </div>
-  
+
 //   <button type="submit" className="btn btn-default">
 //     Submit
 //   </button>
 // </form>
 
-        
-        
-        
-        
 //         </>
 //     )
 // }
 // export default UncontrolledComponent
 
-
-
 // import axios from "axios";
 // import React, { useRef, useState } from "react";
-
-
 
 // const UncontrolledComponent=()=>{
 
 //     const usernameRef=useRef("")
 //     const passwordRef=useRef("")
 //     const[formErrors,setFormErrors]=useState({})
-
 
 //     const onSubmit=(event)=>{
 //         event.preventDefault()
@@ -117,10 +101,8 @@
 //         console.log(usernameEntered)
 //         console.log(passwordEntered)
 
-
-
 //        const formErrors= validations(usernameEntered,passwordEntered)
-       
+
 //        if(Object.keys(formErrors).length>0){
 //         //Trigger the error
 //         setFormErrors(formErrors)
@@ -131,12 +113,10 @@
 //        }
 //     }
 
-
 //     const validations=(username,password)=>{
 
 //         const FormErrors={
 
-            
 //         }
 
 //         if(!username){
@@ -151,10 +131,10 @@
 //         }
 //         else if(password.length>20){
 //             FormErrors.passwordError="Please Enter less than 20 characters"
-           
+
 //         }
 //         return FormErrors
-//     }   
+//     }
 
 // const loginApi=async(username,password)=>{
 //     try{
@@ -168,7 +148,6 @@
 //     console.log(err)
 // }
 
-   
 // }
 //     return(
 //         <>
@@ -183,7 +162,7 @@
 //     <input type="password" className="form-control" id="pwd" ref={passwordRef}/>
 //     <span style={{color:'red'}}>{formErrors.passwordError}</span>
 //   </div>
-  
+
 //   <button type="submit" className="btn btn-default">
 //     Submit
 //   </button>
@@ -194,7 +173,6 @@
 // }
 // export default UncontrolledComponent
 
-
 // import axios from "axios";
 // import React, { useRef, useState } from "react";
 
@@ -204,7 +182,6 @@
 //     const passwordRef=useRef("")
 //     const[formErrors,setFormErrors]=useState({})
 //     const [apiError, setApiError] = useState("");
-
 
 //     const onSubmit=(event)=>{
 //         event.preventDefault()
@@ -226,7 +203,7 @@
 //     }
 //     const validations=(username,password)=>{
 //         const FormErrors={
-            
+
 //         }
 //         if(!username){
 //             FormErrors.usernameError="Please enter the username"
@@ -278,13 +255,12 @@
 //     Submit
 //   </button>
 //   {apiError &&  <p style={{color:"red"}}>{apiError}</p>}
- 
+
 // </form>
 //         </>
 //     )
 // }
 // export default UncontrolledComponent
-
 
 // import axios from "axios";
 // import React, { useRef, useState } from "react";
@@ -313,8 +289,6 @@
 //         }
 //         else{
 //             loginApi(usernameEntered,passwordEntered)
-            
-            
 
 //         }
 
@@ -332,14 +306,12 @@
 //             alert("Login Successfull")
 //             inputRef.current.value=""
 //             passwordRef.current.value=""
-            
 
-            
 //         }
 //         catch(err){
 //             console.log(err)
 //             setApiErr("username and password not exist")
-           
+
 //         }
 //     }
 //     const validations=(username,password)=>{
@@ -372,17 +344,16 @@
 //           <input type="password" className="form-control" id="pwd" ref={passwordRef}/>
 //           <span style={{color:"red"}}>{formErrors?.passwordError}</span>
 //         </div>
-        
+
 //         <button type="submit" className="btn btn-default" style={{backgroundColor:'aqua'}}>
 //           Submit
 //         </button>
 //         {apiErr && <p style={{color:"red"}}>{apiErr}</p>}
 //       </form>
-      
+
 //     )
 // }
 // export default UncontrolledComponent
-
 
 // import axios from "axios";
 // import React, { useRef, useState } from "react";
@@ -409,7 +380,6 @@
 //             loginApi(usernameEntered,passwordEntered)
 //             setFromError("")
 //         }
-        
 
 //     }
 
@@ -430,7 +400,7 @@
 //             Form.passwordError="please enter the less than 20 characters"
 //         }
 //         return Form
-        
+
 //     }
 
 //     const loginApi=async(username,password)=>{
@@ -442,14 +412,13 @@
 //             })
 //             console.log(response)
 //             setApiErr("")
-            
-            
+
 //         }
 //         catch(err){
 //             console.log(err)
 //             setApiErr("please enter the correct values")
 //         }
-       
+
 //     }
 //     return(
 //         <form onSubmit={onSubmit}>
@@ -472,7 +441,6 @@
 //     )
 // }
 // export default UncontrolledComponent
-
 
 import axios from "axios";
 import React, { useRef, useState } from "react";
@@ -497,7 +465,7 @@ const UncontrolledComponent=()=>{
     else{
         loginApi(usernameEntered,passwordEntered)
         setFromError("")
-        
+
     }
     }
 
@@ -540,14 +508,14 @@ const UncontrolledComponent=()=>{
     <label htmlFor="username">Email address</label>
     <input type="text" id="username" ref={usernameRef}/>
     <span style={{color:'red'}}>{formError?.usernameError}</span>
-   
+
   </div>
   <div className="form-group">
     <label htmlFor="password">Password</label>
     <input type="password" id="password" ref={passwordRef}/>
     <span style={{color:'red'}}>{formError?.passwordError}</span>
   </div>
-  
+
   <button type="submit" className="btn btn-primary">
     Submit
   </button>
@@ -558,3 +526,4 @@ const UncontrolledComponent=()=>{
     )
 }
 export default UncontrolledComponent;
+
