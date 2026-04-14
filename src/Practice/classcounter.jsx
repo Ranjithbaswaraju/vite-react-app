@@ -1,38 +1,31 @@
-
-
 import { Component } from "react";
-import { successToasts } from "../components/toasts/toast-helpers";
-import { errorToasts } from "../components/toasts/toast-helpers";
-
-class Counter extends Component{
-
-    state={
-        count:0
+class Counter extends Component {
+  state = {
+    count: 0,
+  };
+  incrementHandler = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  decrementHandler = () => {
+    if (this.state.count <= 0) {
+      alert("count cant be negative");
+    } else {
+      this.setState({ count: this.state.count - 1 });
     }
+  };
+  resetHandler = () => {
+    this.setState({ count: 0 });
+  };
 
-    increment=()=>{
-        this.setState({count:this.state.count+1},
-            ()=>{
-                successToasts(`The current Toast ${this.state.count}`)
-            })
-    }
-
-    decrement=()=>{
-        this.setState({count:this.state.count-1},
-            ()=>{
-                errorToasts(`The decrement count is ${this.state.count}`)
-            }
-        )
-    }
-    render(){
-        return(
-            <>
-            <h2>Counter:{this.state.count}</h2>
-            <button onClick={this.increment}>Increment</button>
-            <button onClick={this.decrement}>Decrement</button>
-
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <p>count :{this.state.count}</p>
+        <button onClick={this.incrementHandler}>Increment</button>
+        <button onClick={this.decrementHandler}>Decrement</button>
+        <button onClick={this.resetHandler}>Reset</button>
+      </>
+    );
+  }
 }
-export default Counter
+export default Counter;

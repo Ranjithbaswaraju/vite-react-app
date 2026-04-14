@@ -1,27 +1,24 @@
+import React, { Component } from "react";
 
+class Youtube extends Component {
+  state = {
+    isSubscribe: false,
+    text2: "Successfully subscribed",
+    text1: "click here to subscribe",
+  };
 
-import { Component } from "react";
+  clickHandler = () => {
+    this.setState({ isSubscribe: !this.state.isSubscribe });
+  };
 
-class Youtube extends Component{
-
-    state={
-        isSub:false,
-        text1:"Subscribe",
-        text2:"Subscribe Succesfully"
-    }
-    clickHandler=()=>{
-        this.setState({
-            isSub:!this.state.isSub
-        })
-    }
-
-    render(){
-        return(
-            <>
-            <button onClick={this.clickHandler}>{this.state.isSub?this.state.text2:this.state.text1}</button>
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <button onClick={this.clickHandler}>
+          {this.state.isSubscribe ? this.state.text2 : this.state.text1}
+        </button>
+      </>
+    );
+  }
 }
-
-export default Youtube
+export default Youtube;
