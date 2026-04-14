@@ -1,38 +1,45 @@
-// import React, { useRef, useState } from "react";
 
-// const UseRefExample=()=>{
-//   const[count,setCount]=useState(0)
-//   const inputRef=useRef(null)
 
-//   const handler=()=>{
-//     inputRef.current=count
 
-//     setCount(count+1)
+
+
+// import React, { useState }  from "react";
+
+// const UseRefExample1=()=>{
+
+//   const[name,setName]=useState("")
+
+//   const handler=(e)=>{
+//     setName(e.target.value)
 //   }
 
 //   return(
 //     <>
-//     <p>Previous count:{inputRef.current}</p>
-//     <p>Current Count:{count}</p>
-//     <button onClick={handler}>Click me</button>
+//     <input value={name} type="text" onChange={handler}/>
 //     </>
 //   )
+
 // }
-// export default UseRefExample
+// export default UseRefExample1
 
-import React, { useState } from "react";
 
-const UseRefExample=()=>{
+import React, { useRef, useState } from "react";
 
-  const[name,setName]=useState("")
 
-  const handler=(event)=>{
-    setName(event.target.value)
-  }
+const prevCount=()=>{
+const[count,setCount]=useState(0)
+const inputRef=useRef('')
+
+const Counter=()=>{
+  inputRef.current=count
+  setCount(count+1)
+}
   return(
     <>
-      <input type="text" value={name} onChange={handler}/>
+    <p>Current Count:{count}</p>
+    <p>Previous Count :{inputRef.current}</p>
+    <button onClick={Counter}>Click</button>
     </>
   )
 }
-export default UseRefExample
+export default prevCount
