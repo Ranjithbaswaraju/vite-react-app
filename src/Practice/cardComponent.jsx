@@ -40,4 +40,31 @@ function CardComponent({title,category,description,image}) {
   );
 }
 
+
 export default CardComponent;
+
+
+
+
+// //button clicked 
+
+
+// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
+
+// function BasicExample({title,des,img}) {
+//   return (
+//     <Card style={{ width: '400px' }}>
+//       <Card.Img variant="top" src={img} />
+//       <Card.Body>
+//         <Card.Title>{title}</Card.Title>
+//         <Card.Text>
+//           {des}
+//         </Card.Text>
+//         <Button variant="primary">Go somewhere</Button>
+//       </Card.Body>
+//     </Card>
+//   );
+// }
+
+// export default BasicExample;

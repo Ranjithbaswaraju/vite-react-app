@@ -46,44 +46,97 @@
 // export default UseEffectfetch
 
 
+// // button clikced
+
+// import axios from "axios";
+// import React, { useEffect, useState } from "react";
+// import BasicExample from "./cardComponent";
+
+
+// const UseEffectfetch=()=>{
+//     const[data,setData]=useState([])
+
+// const handler=()=>{
+    
+//         const response=async()=>{
+//             try{
+//                 const mess=await axios.get('https://fakestoreapi.com/products');
+//                 console.log(mess)
+//                 setData(mess.data)
+//             }
+//             catch(err){
+//                 console.log(err)
+//             }
+//         }
+//         response()
+    
+// }
+//     return(
+//         <>
+//     <button onClick={handler}>Click here</button> 
+
+//     {
+//         data.map((item)=>{
+//             return(
+//                 <>
+//                 <BasicExample 
+//                 key={item}
+//                 title={item.title}
+//                 des={item.description}
+//                 img={item.image}
+//                 />
+//                 </>
+//             )
+//         })
+//     }   
+//         </>
+//     )
+
+// }
+// export default UseEffectfetch
+
+
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardComponent from "./cardComponent";
 
-const UseEffectfetch = () => {
-    const[data,setData]=useState([])
 
-    useEffect(()=>{
-        const data1=async()=>{
-            try{
-                const response=await axios.get('https://fakestoreapi.com/products')
-                setData(response.data)
-                console.log(response.data)
-            }
-            catch(err){
-                console.log(err)
-            }
+const UseEffectfetch=()=>{
+const[data,setData]=useState([])
+
+useEffect(()=>{
+    const mess=async()=>{
+        try{
+            const final=await axios.get('https://fakestoreapi.com/products')
+        
+            console.log(final)
+        setData(final.data)
         }
-        data1()
-    })
+        
+        catch(err){
+            console.log(err)
+        }
+    }
+    mess()
+})
 
-    return(
-        <div style={{height:"100%",width:'100%',display:'flex',flexWrap:'wrap',gap:"10px",justifyContent:'center'
-        }}>
-            {
-                data.map((each)=>{
-                    return(
-                        <>
-                        <CardComponent
-                        title={each.title}
-                        category={each.category}
-                        description={each.description}
-                        image={each.image}/>
-                        </>
-                    )
-                })
-            }
-        </div>
-    )
+return(
+    <>
+        {
+            data.map((item)=>{
+                return(
+                    <>
+                    <CardComponent key={item}
+                    title={item.title}
+                    category={item.category}
+                    description={item.description}
+                    image={item.image}
+                    />
+                    </>
+                )
+            })
+        }
+    </>
+)
 }
-export default UseEffectfetch
+export default UseEffectfetch;
