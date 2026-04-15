@@ -191,51 +191,81 @@
 // export default UserReducerExample4
 
 
+import React, { useReducer, useState } from "react";
 
-import React, { act, useReducer, useState } from "react";
-
-const reducer=(state,action)=>{
-    switch(action.type){
+const reducer = (state, action) => {
+    switch (action.type) {
         case "ADD":
-            return {...state,todos:[...state.todos,action.payload]}
+            return {
+                ...state,
+                todos: [...state.todos, action.payload]
+            };
+
+        case "DELETE":
+            return {
+                ...state,
+                todos: state.todos.filter((_, index) => index !== action.payload)
+            };
+
+        default:
+            return state;
     }
-}
+};
+
 const UserReducerExample4 = () => {
-
     const initialState = {
-        username:'ranjith',
-        todos:[]
-    }
-    const[todos,setTodos]=useState([])
-    const[currentState,dispatch]=useReducer(reducer,initialState)
+        username: "ranjith",
+        todos: []
+    };
 
-    const todoHandler=(event)=>{
-        setTodos(event.target.value)
-        
-    }
-    const addHandler=()=>{
+    const [todo, setTodo] = useState("");
+    const [currentState, dispatch] = useReducer(reducer, initialState);
+
+    const todoHandler = (e) => {
+        setTodo(e.target.value);
+    };
+
+    const addHandler = () => {
+        if (todo.trim() === "") return;
+
         dispatch({
-            type:'ADD',
-            payload:todos
-        })
-        setTodos("")
-    }
-    return(
+            type: "ADD",
+            payload: todo
+        });
+
+        setTodo("");
+    };
+
+    const deleteHandler = (index) => {
+        dispatch({
+            type: "DELETE",
+            payload: index
+        });
+    };
+
+    return (
         <>
-        <input type="text" onChange={todoHandler} value={todos}/>
-        <button onClick={addHandler}>Add</button>
-        <ol>
-        {
-              currentState.todos.map((each)=>{
-                return(
-                    <li key={each.id}>{each}</li>
-                )
-            })
-        }
-        </ol>
+            <h3>Todo List</h3>
+
+            <input
+                type="text"
+                value={todo}
+                onChange={todoHandler}
+            />
+            <button onClick={addHandler}>Add</button>
+
+            <ol>
+                {currentState.todos.map((each, index) => (
+                    <li key={index}>
+                        {each}
+                        <button onClick={() => deleteHandler(index)}>
+                            Delete
+                        </button>
+                    </li>
+                ))}
+            </ol>
         </>
-    )
-}
-export default UserReducerExample4
+    );
+};
 
-
+export default UserReducerExample4;
