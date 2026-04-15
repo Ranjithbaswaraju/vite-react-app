@@ -10,8 +10,8 @@ const App = () => {
   return (
     <>
     
-    {/* <UseEffectfetch/> */}
-    <Image/>
+    <UseEffectfetch/>
+    {/* <Image/> */}
     </>
   );
 }
