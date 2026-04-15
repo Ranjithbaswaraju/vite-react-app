@@ -1,5 +1,3 @@
-
-
 // import React, { useMemo, useState } from "react";
 // const UseMemoSearch=()=>{
 //     const[search,setSearch]=useState("")
@@ -21,19 +19,18 @@
 //                 <ol >
 //                {
 //                  filteredData.map((ranjith,index)=>(
-                    
+
 //                     <li key={index}>{ranjith}</li>
 //                 ))}
 //                 </ol>
-                
+
 //             )
 //         }
-      
+
 //         </>
 //     )
 // }
 // export default UseMemoSearch
-
 
 // import React, { useMemo, useState } from "react";
 
@@ -50,15 +47,12 @@
 //             item.toLowerCase().includes(seach.toLowerCase())
 //         ))
 //     },[seach])
-        
-    
 
 //     return(
 //         <>
 //         <h1>Search available fruits </h1>
 //             <input value={seach} onChange={handler}/>
-            
-            
+
 //                <ol>
 //                {
 //                 filterData.length==0 ? (<p style={{color:"red"}}>No results found</p>)
@@ -73,9 +67,7 @@
 //                 )
 
 //             }
-//                 </ol> 
-            
-
+//                 </ol>
 
 //         </>
 //     )
@@ -108,7 +100,7 @@
 //                             <li>{item}</li>
 //                         )
 //                     })
-//                  }   
+//                  }
 //                 </ol>
 //             ):(
 //                 <p>No result</p>
@@ -119,39 +111,74 @@
 // }
 // export default UseMemoSearch
 
+// import React, { useMemo, useState } from "react";
 
+// const UseMemoSearch = () => {
+//     const items=["apple","banana","cat","ball","boy"]
+//     const[input,setInput]=useState("")
+
+//     const filteredData=useMemo(()=>{
+//         return items.filter((item)=>{
+//             return item.toLowerCase().includes(input.toLowerCase())
+//         })
+//     })
+
+//     const handler=(e)=>[
+//         setInput(e.target.value)
+//     ]
+//     return (
+//         <>
+//         <input type="text" value={input} onChange={handler}/>
+//         {
+//             filteredData.length > 0 ? (
+//                 <ol>
+//                     {
+//                         filteredData.map((item)=>{
+//                             return(
+//                                 <li>{item}</li>
+//                             )
+
+//                 })
+//                     }
+//                 </ol>
+//             ):(<p>No result</p>)
+//         }
+//         </>
+//     )
+// }
+// export default UseMemoSearch
 import React, { useMemo, useState } from "react";
 
-const UseMemoSearch = () => {
-    const items=["apple","banana","cat","ball","boy"]
-    const[input,setInput]=useState("")
+const UseMemoSearch=()=>{
+    const items=['apple','banana','mango']
+    const[name,setName]=useState('')
+
+    const handler=(e)=>{
+        setName(e.target.value)
+    }
 
     const filteredData=useMemo(()=>{
         return items.filter((item)=>{
-            return item.toLowerCase().includes(input.toLowerCase())
+            return item.toLocaleLowerCase().includes(name.toLocaleLowerCase())
         })
     })
 
-    const handler=(e)=>[
-        setInput(e.target.value)
-    ]
-    return (
+    return(
         <>
-        <input type="text" value={input} onChange={handler}/>
-        {
+        <input type="text" value={name} onChange={handler}/>
+        <ol>
+            {
             filteredData.length > 0 ? (
-                <ol>
-                    {
-                        filteredData.map((item)=>{
-                            return(
-                                <li>{item}</li>
-                            )
-                    
+                filteredData.map((each)=>{
+                    return(
+                        <li>{each}</li>
+                    )
                 })
-                    }
-                </ol>
-            ):(<p>No result</p>)
+            ) : (<p style={{color:'red'}}>Not Found</p>)
         }
+        </ol>
+        
+        
         </>
     )
 }
