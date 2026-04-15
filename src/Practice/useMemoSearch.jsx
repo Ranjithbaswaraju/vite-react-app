@@ -183,3 +183,35 @@ const UseMemoSearch=()=>{
     )
 }
 export default UseMemoSearch
+
+
+// without usemo
+// import React, { useState } from "react";
+
+// const Search=()=>{
+//     const items=['apple','banana','cat']
+//     const[input,setInput]=useState("")
+
+//     const handler=(e)=>{
+//         setInput(e.target.value)
+//     }
+
+//     const filterData=items.filter((item)=>{
+//         return item.toLowerCase().includes(input.toLowerCase())
+//     })
+//     return(
+//         <>
+//         <input type="text" onChange={handler}/>
+//         {
+//             filterData.map((item)=>{
+//                 return(
+//                     <>
+//                     <p>{item}</p>
+//                     </>
+//                 )
+//             })
+//         }
+//         </>
+//     )
+// }
+// export default Search;
