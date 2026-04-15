@@ -13,7 +13,6 @@ const App=()=>{
 
   return(
     <>
-{/* <UseEffectExample/> */}
 {/* <UseEffectExample2/> */}
 {/* <UseEffectExample3/> */}
 {/* <User/> */}
