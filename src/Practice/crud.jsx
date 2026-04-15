@@ -132,45 +132,91 @@
 // export default  CrudOperations
 
 
+// import React, { useState } from "react";
+
+// const CrudOperations=()=>{
+//     const[name,setName]=useState("")
+//     const[todos,setTodos]=useState([])
+
+//     const handler=(event)=>{
+//         setName(event.target.value)
+//     }
+//     const addHandler=(event)=>{
+//         event.preventDefault()
+//         setTodos([...todos,name])
+//     }
+
+//     const deleteHandler=(ind)=>{
+//         const upddated=todos.filter((_,index)=>index!==ind)
+//         setTodos(upddated)
+//     }
+
+//     return(
+//         <>
+//             <input type="text" value={name} onChange={handler}/>
+//             <button onClick={addHandler}>Submit</button>
+//         <ol>
+
+//         {
+//                 todos?.map((item,index)=>{
+//                     return(
+//                         <>
+//                         <li key={index}>{item}</li>
+//                         <button onClick={()=>deleteHandler(index)}>Delete</button>
+                    
+//                         </>
+//                     )
+//                 })
+//             }
+//         </ol>
+           
+//         </>
+//     )
+// }
+// export default CrudOperations
+
+
 import React, { useState } from "react";
 
 const CrudOperations=()=>{
-    const[name,setName]=useState("")
-    const[todos,setTodos]=useState([])
+const[name,setName]=useState("")
+const[todos,setTodos]=useState([])
 
-    const handler=(event)=>{
-        setName(event.target.value)
-    }
-    const addHandler=(event)=>{
-        event.preventDefault()
-        setTodos([...todos,name])
-    }
 
-    const deleteHandler=(ind)=>{
-        const upddated=todos.filter((_,index)=>index!==ind)
-        setTodos(upddated)
-    }
-
-    return(
-        <>
-            <input type="text" value={name} onChange={handler}/>
-            <button onClick={addHandler}>Submit</button>
-        <ol>
-
-        {
-                todos?.map((item,index)=>{
-                    return(
-                        <>
-                        <li key={index}>{item}</li>
-                        <button onClick={()=>deleteHandler(index)}>Delete</button>
-                    
-                        </>
-                    )
-                })
-            }
-        </ol>
-           
-        </>
-    )
+const submitHandler=(e)=>{
+    e.preventDefault()
+    setTodos([...todos,name])
+    setName("")
 }
-export default CrudOperations
+
+const handler=(e)=>{
+    setName(e.target.value)
+}
+const deleteHandler=(ind)=>{
+    const updated=todos.filter((_,index)=>ind!==index)
+    setTodos(updated)
+}
+
+return(
+    <>
+    <input onChange={handler} value={name} type="text"/>
+    <button onClick={submitHandler}>Add</button>
+    <ol>
+    {
+        todos?.map((item,index)=>{
+            return(
+                <>
+                <li>{item}</li>
+                <button onClick={()=>deleteHandler(index)}>Delete Todo</button>
+                </>
+            )
+        })
+
+    }
+    </ol>
+
+    
+    </>
+)
+}
+export default CrudOperations;
