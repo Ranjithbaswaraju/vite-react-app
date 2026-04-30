@@ -99,71 +99,74 @@
 // // }
 // // export default Even;
 
-// import React, { useState } from "react";
-
-// const Even=()=>{
-//     const[number,setNumber]=useState('')
-//     let result=''
-
-//     const handler=(e)=>{
-//         setNumber(e.target.value)
-//     }
-
-//     if((number==="" || isNaN(number))){
-//         result=""
-//     }
-//         else if(number%2==0){
-//             result='even'
-//         }
-//         else{
-//             result='odd'
-//         }
-
-//     return(
-//         <>
-//         <input value={number} onChange={handler}/>
-//         <p>The entered Number is :{result}</p>
-//         </>
-//     )
-
-// }
-// export default Even;
 import React, { useState } from "react";
 
-const Even = () => {
-  const [number, setNumber] = useState("");
-  let result = "";
+const Even=()=>{
+    const[number,setNumber]=useState('')
+    let result=''
 
-  const handler = (e) => {
-    setNumber(e.target.value);
-  };
+    const handler=(e)=>{
+        setNumber(e.target.value)
+    }
 
-  if (number == "" || isNaN(number)) {
-    result = "";
-  }
-   else if (number % 2 == 0) {
-    result = "even";
-  } else {
-    result = "odd";
-  }
+    if((number==="" || isNaN(number))){
+        result=""
+    }
+        else if(number%2==0){
+            result='even'
+        }
+        else{
+            result='odd'
+        }
 
-  let bgColor = "";
-  if (result == "even") {
-    bgColor = "orange";
-  } else {
-    bgColor = "blue";
-  }
-  return (
-    <>
-      <div
-        style={{ height: "100vh", width:"100vw", backgroundColor: bgColor ,display:'flex', justifyContent:"center",alignItems:'center' ,flexDirection:'column'}}
-      >
-        <p>The entered number is :{result}</p>
-        <input type="text" value={number} onChange={handler} />
+    return(
+        <>
+        <input value={number} onChange={handler}/>
+        <p>The entered Number is :{result}</p>
+        </>
+    )
+
+}
+export default Even;
+
+
+
+// import React, { useState } from "react";
+
+// const Even = () => {
+//   const [number, setNumber] = useState("");
+//   let result = "";
+
+//   const handler = (e) => {
+//     setNumber(e.target.value);
+//   };
+
+//   if (number == "" || isNaN(number)) {
+//     result = "";
+//   }
+//    else if (number % 2 == 0) {
+//     result = "even";
+//   } else {
+//     result = "odd";
+//   }
+
+//   let bgColor = "";
+//   if (result == "even") {
+//     bgColor = "orange";
+//   } else {
+//     bgColor = "blue";
+//   }
+//   return (
+//     <>
+//       <div
+//         style={{ height: "100vh", width:"100vw", backgroundColor: bgColor ,display:'flex', justifyContent:"center",alignItems:'center' ,flexDirection:'column'}}
+//       >
+//         <p>The entered number is :{result}</p>
+//         <input type="text" value={number} onChange={handler} />
         
-      </div>
-    </>
-  );
-};
+//       </div>
+//     </>
+//   );
+// };
 
-export default Even
+// export default Even
