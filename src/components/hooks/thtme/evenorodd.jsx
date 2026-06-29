@@ -1,6 +1,8 @@
 // // import React, { useState } from "react";
 
-import { useState } from "react"
+import { useState } from "react";
+
+
 
 // // const Even=()=>{
 // //     const[number,setNumber]=useState("")
@@ -132,14 +134,12 @@ import { useState } from "react"
 // export default Even;
 
 
-
-
 const Even=()=>{
 const[number,setNumber]=useState("")
 let result=''
 
 if((number=="" || isNaN(number))){
-  result=""
+  result="Please Enter only Numbers"
 }
 else if(number%2==0){
   result="even"
@@ -147,12 +147,10 @@ else if(number%2==0){
 else{
   result="odd"
 }
-
 let bgColor=""
 if(result=="even"){
   bgColor="red"
 }
-
 else{
   bgColor="black"
 }
@@ -168,3 +166,4 @@ return(
 )
 } 
 export default Even
+
